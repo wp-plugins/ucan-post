@@ -36,8 +36,8 @@ if (!class_exists("uCanPost"))
     //Initialize all the above variables
     function uCan_Set_Links()
     {
-      $this->ucan_plugin_dir      = ABSPATH."wp-content/plugins/uCan-Post/";
-      $this->ucan_plugin_url      = WP_CONTENT_URL."/plugins/uCan-Post/";
+      $this->ucan_plugin_dir      = ABSPATH."wp-content/plugins/ucan-post/";
+      $this->ucan_plugin_url      = WP_CONTENT_URL."/plugins/ucan-post/";
       $this->ucan_page_url        = get_permalink($this->uCan_Page_ID());
       $this->ucan_action_url      = $this->ucan_page_url.$this->uCan_Get_Delim()."ucanaction=";
       $this->ucan_views_dir       = $this->ucan_plugin_dir."views/";
