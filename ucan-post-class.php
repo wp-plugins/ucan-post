@@ -88,7 +88,7 @@ if (!class_exists("uCanPost"))
               theme_advanced_buttons3 : "forecolor,backcolor,|,emotions,charmap,spellchecker,|,code,preview,|,help",
               theme_advanced_toolbar_location : "top",
               theme_advanced_toolbar_align : "left",
-              plugins : "emotions,preview,safari,spellchecker,media",
+              plugins : "emotions,preview,safari,spellchecker,media"
             });
           </script>
           <script type="text/javascript">
