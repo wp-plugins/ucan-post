@@ -34,7 +34,7 @@
 // ------------------------------------------------------------------------------
 
 function ucan_get_cartpauj_url() {
-  return "http://cartpauj.com/crazy8";
+  return "http://cartpauj.com/downloads";
 }
 
 function ucan_str_encrypt($str) { 
