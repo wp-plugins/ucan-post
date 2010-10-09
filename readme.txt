@@ -4,7 +4,7 @@ Donate link: http://cartpauj.com/donate
 Tags: ucan post, user posting, user posts, users, post, posts, blog posts, blog, blog content, add posts, users add posts, posting form, form, posting
 Requires at least: 2.8.6
 Tested up to: 3.0.1
-Stable tag: 1.0.04
+Stable tag: 1.0.05
 
 The easiest way to allow your users, and even guests, to create posts on your blog. Users don't need to access the Dashboard to do so either as this plugin adds a page to the front end of your site for quick posting.
 
@@ -55,6 +55,8 @@ n/a
 n/a
 
 == Changelog ==
+= 1.0.05 =
+* Made it possible for text on page to show above the submission form
 = 1.0.04 =
 * Fixed a textdomain bug preventing translations from working properly
 * Added Spanish translation

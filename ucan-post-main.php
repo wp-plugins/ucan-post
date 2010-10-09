@@ -3,7 +3,7 @@
 Plugin Name: uCan Post
 Plugin URI: http://cartpauj.com/projects/ucan-post-plugin
 Description: uCan Post is the easiest way to allow your users to post content to your blog without having to use the WordPress Dashboard.
-Version: 1.0.04
+Version: 1.0.05
 Author: Cartpauj
 Author URI: http://cartpauj.com
 Text Domain: ucan-post

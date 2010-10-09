@@ -203,7 +203,7 @@ if (!class_exists("uCanPost"))
         $errors[] = __('You must enter some content!', 'ucan-post');
       if($this->ucan_options['uCan_Show_Captcha'])
         if($code != $_POST['ucan_show_captcha'] && !empty($code))
-          $errors[] = __('Image verification did not match','ucan-post');
+          $errors[] = __('Image verification did not match!','ucan-post');
 
       return $errors;
     }
@@ -320,9 +320,10 @@ if (!class_exists("uCanPost"))
     function uCan_Display()
     {
       global $user_level;
-
-      $this->uCan_Set_Links(); //This pretty much sets all the links/directories up
       $out = "";
+      
+      $this->uCan_Set_Links(); //This pretty much sets all the links/directories up
+      ob_start();
 
       if(current_user_can('level_'.$this->ucan_options['uCan_Post_Level']) || $this->ucan_options['uCan_Post_Level'] == 'guest')
         switch($_GET['ucanaction'])
@@ -341,7 +342,10 @@ if (!class_exists("uCanPost"))
             break;
         }
       else
-        $out = "<p><strong>".__('You do not have permission to use this form', 'ucan-post')."</strong></p>";
+        echo "<p><strong>".__('You do not have permission to use this form', 'ucan-post')."</strong></p>";
+        
+      $out = ob_get_contents();
+      ob_end_clean();
 
       return $out;
     }
