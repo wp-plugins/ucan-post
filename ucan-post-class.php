@@ -8,6 +8,7 @@ if (!class_exists("uCanPost"))
     function uCanPost()
     {
       $this->uCan_Set_Admin_Options(); //Init the admin options
+      $this->uCan_Set_DB_Table_Names();
     }
 
     //Define some variables
@@ -26,11 +27,44 @@ if (!class_exists("uCanPost"))
     var $ucan_wp_admin_url    = "";
     var $ucan_wp_includes_url = "";
 
+    var $ucan_db_submissions  = "";
+
+    function uCan_Set_DB_Table_Names()
+    {
+      global $wpdb;
+
+      $this->ucan_db_submissions = $wpdb->prefix.'ucan_post_submissions';
+    }
+
     //This function is called on Plugin Activation -- it just allows subscribers access to uploads
     function uCan_Activate()
     {
-      $role = get_role( 'subscriber' );
-      $role->add_cap( 'upload_files' );
+      global $wpdb;
+
+      $charset_collate = '';
+      if($wpdb->has_cap('collation'))
+      {
+        if(!empty($wpdb->charset))
+          $charset_collate = "DEFAULT CHARACTER SET $wpdb->charset";
+        if(!empty($wpdb->collate))
+          $charset_collate .= " COLLATE $wpdb->collate";
+      }
+
+      $ucan_submissions_sql = "CREATE TABLE ".$this->ucan_db_submissions."(
+      `id` int(11) NOT NULL auto_increment,
+      `name` varchar(120) NOT NULL,
+      `email` varchar(120) NOT NULL,
+      `postid` int(11) NOT NULL default '0',
+      `type` varchar(60) NOT NULL,
+      PRIMARY KEY (`id`))
+      {$charset_collate};";
+
+      require_once(ABSPATH.'wp-admin/includes/upgrade.php');
+
+      dbDelta($ucan_submissions_sql);
+
+      $role = get_role('subscriber');
+      $role->add_cap('upload_files');
     }
 
     //Initialize all the above variables
@@ -74,7 +108,7 @@ if (!class_exists("uCanPost"))
           <link rel="stylesheet" type="text/css" media="all" href="<?php echo $this->ucan_plugin_url.'niceforms/niceforms-default.css'; ?>" />
           <link rel="stylesheet" id="thickbox-css"  href="<?php echo $this->ucan_wp_includes_url.'js/thickbox/thickbox.css'; ?>" type="text/css" media="all" />
           <!-- TODO - Possibly add a setting to NOT load the jquery if users have problems with the following line -->
-          <script type="text/javascript" src="<?php echo $this->ucan_wp_admin_url.'load-scripts.php?c=1&amp;load=jquery,utils,thickbox,media-upload'; ?>"></script><!-- Left Out ,quicktags,editor -->
+          <script type="text/javascript" src="<?php echo $this->ucan_wp_admin_url.'load-scripts.php?c=1&amp;load=jquery,utils,thickbox,media-upload'; ?>"></script><!-- Left Out ,quicktags, editor -->
           <script type="text/javascript" src="<?php echo $this->ucan_js_url.'tinymce/tiny_mce.js'; ?>" ></script>
           <script type="text/javascript">
             tinyMCE.init({
@@ -85,7 +119,7 @@ if (!class_exists("uCanPost"))
               width:"80%",
               theme_advanced_buttons1 : "bold,italic,underline,|,justifyleft,justifycenter,justifyright,fontsizeselect,formatselect",
               theme_advanced_buttons2 : "cut,copy,paste,|,bullist,numlist,|,outdent,indent,|,undo,redo,|,link,unlink,image,media",
-              theme_advanced_buttons3 : "forecolor,backcolor,|,emotions,charmap,spellchecker,|,code,preview,|,help",
+              theme_advanced_buttons3 : "blockquote,|,forecolor,backcolor,|,emotions,charmap,spellchecker,|,code,preview,|,help",
               theme_advanced_toolbar_location : "top",
               theme_advanced_toolbar_align : "left",
               plugins : "emotions,preview,safari,spellchecker,media"
@@ -113,14 +147,16 @@ if (!class_exists("uCanPost"))
     //Add the admin settings page
     function uCan_Add_Admin_Page()
     {
-      add_options_page('uCan Post', 'uCan Post', 9, basename(__FILE__), array(&$this, 'uCan_Display_Admin_Page'));
+      $this->uCan_Set_Links();
+      add_menu_page(__('uCan Post - Overview', 'ucan-post'), 'uCan Post', 9, 'ucanmain', array(&$this, 'uCan_Display_Admin_Options_Page'), $this->ucan_images_url.'menu_icon.png');
+      add_submenu_page( 'ucanmain', __('uCan Post - Options', 'ucan-post'), __('Options', 'ucan-post'), 9, 'ucanmain', array(&$this, 'uCan_Display_Admin_Options_Page'));
+      add_submenu_page( 'ucanmain', __('uCan Post - Submissions', 'ucan-post'), __('Submissions', 'ucan-post'), 9, 'ucansubmissions', array(&$this, 'uCan_Display_Admin_Submissions_Page'));
+      //add_submenu_page( 'ucanmain', __('uCan Post - Overview', 'ucan-post'), __('Overview', 'ucan-post'), 9, 'ucanoverview', array(&$this, 'uCan_Display_Admin_Overview_Page'));
     }
 
     //Sets up variables and displays the admin page
-    function uCan_Display_Admin_Page()
+    function uCan_Display_Admin_Options_Page()
     {
-      $this->uCan_Set_Links();
-
       $categories = $this->uCan_Get_Categories();
       $users = $this->uCan_Get_All_Users();
 
@@ -128,6 +164,12 @@ if (!class_exists("uCanPost"))
         require($this->ucan_views_dir.'ucan-admin-options-saved.php');
 
       require($this->ucan_views_dir.'ucan-admin-options-form.php');
+    }
+
+    function uCan_Display_Admin_Submissions_Page()
+    {
+      $submissions = $this->uCan_Get_All_Submissions();
+      require($this->ucan_views_dir.'ucan-admin-submissions-page.php');
     }
 
     //Get/Set the admin options
@@ -190,6 +232,8 @@ if (!class_exists("uCanPost"))
     //Validate post submission before committing it to the DB
     function uCan_Validate_Submission()
     {
+      global $user_ID;
+
       $errors = array();
       if($this->ucan_options['uCan_Show_Captcha'])
       {
@@ -204,6 +248,10 @@ if (!class_exists("uCanPost"))
       if($this->ucan_options['uCan_Show_Captcha'])
         if($code != $_POST['ucan_show_captcha'] && !empty($code))
           $errors[] = __('Image verification did not match!','ucan-post');
+      if(empty($_POST['ucan_submission_guest_name']) && !$user_ID)
+        $errors[] = __('You must enter your name!', 'ucan-post');
+      if((empty($_POST['ucan_submission_guest_email']) || !$this->uCan_Validate_Email_Address(stripslashes($_POST['ucan_submission_guest_email']))) && !$user_ID)
+        $errors[] = __('You must enter a valid email address!', 'ucan-post');
 
       return $errors;
     }
@@ -213,6 +261,8 @@ if (!class_exists("uCanPost"))
     //If validation checks out - Publish this PIG
     function uCan_Display_Publish()
     {
+      global $user_ID;
+
       $categories = $this->uCan_Get_Categories();
       $errors = $this->uCan_Validate_Submission();
       $new_post_id = 0;
@@ -226,6 +276,7 @@ if (!class_exists("uCanPost"))
         {
           $new_post_permalink = get_permalink($new_post_id);
           $this->uCan_Maybe_Email_Admin($new_post_permalink);
+          $this->uCan_Add_DB_Submission($new_post_id);
           require($this->ucan_views_dir.'ucan-publish.php');
         }
         else
@@ -242,8 +293,8 @@ if (!class_exists("uCanPost"))
     function uCan_Publish_Submission()
     {
       global $user_ID;
-      $ucan_new_post = array();
 
+      $ucan_new_post = array();
       $ucan_new_post['post_type'] = 'post';
       $ucan_new_post['post_title'] = stripslashes($_POST['ucan_submission_title']);
       $ucan_new_post['post_content'] = stripslashes($_POST['ucan_submission_content']);
@@ -284,11 +335,52 @@ if (!class_exists("uCanPost"))
       return $ucan_new_post;
     }
 
+    function uCan_Add_DB_Submission($postid)
+    {
+      global $wpdb, $user_ID;
+
+      if($user_ID)
+        $user_info = get_userdata($user_ID);
+
+      $type = 'guest';
+      if($user_ID)
+        $type = 'member';
+
+      $name = $wpdb->escape(stripslashes($_POST['ucan_submission_guest_name']));
+      if($user_ID)
+        if(!empty($user_info->first_name) || !empty($user_info->last_name))
+          $name = $user_info->first_name.' '.$user_info->last_name;
+        else
+          $name = $user_info->user_login;
+
+      $email = $wpdb->escape(stripslashes($_POST['ucan_submission_guest_email']));
+      if($user_ID)
+        $email = $user_info->user_email;
+
+      $wpdb->query($wpdb->prepare("INSERT INTO {$this->ucan_db_submissions} (`type`, `name`, `email`, `postid`) VALUES ('{$type}', '{$name}', '{$email}', '{$postid}')"));
+    }
+
+    function uCan_Get_All_Submissions()
+    {
+      global $wpdb;
+
+      return $wpdb->get_results($wpdb->prepare("SELECT * FROM {$this->ucan_db_submissions} ORDER BY `id` DESC"));
+    }
+
+    function uCan_Delete_Submission($id)
+    {
+      global $wpdb;
+
+      $wpdb->query($wpdb->prepare("DELETE FROM {$this->ucan_db_submissions} WHERE `postid` = {$id}"));
+    }
+
 
 /************************FORM DISPLAY***********************/
     //Display the post submission form
     function uCan_Display_Form()
     {
+      global $user_ID;
+
       $categories = $this->uCan_Get_Categories();
       require($this->ucan_views_dir.'ucan-submission-form.php');
     }
@@ -383,6 +475,15 @@ if (!class_exists("uCanPost"))
           wp_mail($sendermail, __('New Post Submission', 'ucan-post'), $mailMessage, $headers);
 			}
 		}
+
+    function uCan_Validate_Email_Address($input)
+    {
+      $atom = '[a-zA-Z0-9!#$%&\'*+\-\/=?^_`{|}~]+';
+      $quoted_string = '"([\x1-\x9\xB\xC\xE-\x21\x23-\x5B\x5D-\x7F]|\x5C[\x1-\x9\xB\xC\xE-\x7F])*"';
+      $word = "$atom(\.$atom)*";
+      $domain = "$atom(\.$atom)+";
+      return strlen($input) < 256 && preg_match("/^($word|$quoted_string)@${domain}\$/", $input);
+    }
 
     /*This will autoembed things like Youtube videos into the posts
     function uCan_Auto_Embed($string)

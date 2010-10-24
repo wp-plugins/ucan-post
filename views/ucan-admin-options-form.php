@@ -1,5 +1,5 @@
 <div class="wrap">
-  <h2><?php echo __('uCan Post -- Admin Options', 'ucan-post'); ?></h2>
+  <h2><img src="<?php echo $this->ucan_images_url.'admin_options.png'; ?>" style="vertical-align:middle;" /> <?php echo __('uCan Post -- Admin Options', 'ucan-post'); ?></h2>
   <form method='post' action=''>
     <table class='widefat'>
       <thead>

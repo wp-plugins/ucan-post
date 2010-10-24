@@ -4,7 +4,7 @@ Donate link: http://cartpauj.com/donate
 Tags: ucan post, user posting, user posts, users, post, posts, blog posts, blog, blog content, add posts, users add posts, posting form, form, posting
 Requires at least: 2.8.6
 Tested up to: 3.0.1
-Stable tag: 1.0.05
+Stable tag: 1.0.06
 
 The easiest way to allow your users, and even guests, to create posts on your blog. Users don't need to access the Dashboard to do so either as this plugin adds a page to the front end of your site for quick posting.
 
@@ -28,15 +28,20 @@ You can try uCan Post out on my site:
 * Set whether comments/trackbacks are allowed on submitted posts
 * Set whether to moderate new posts or publish them immediately
 * Email administrator when new posts are submitted
+* Tracks submissions
+* Collect guest names/emails for follow up
+* Nice WYSIWYG editor
 
 = Translations =
 * Note: If you would like to translate uCan Post into your language [read this](http://cartpauj.com/forum/?mingleforumaction=viewtopic&t=25.0)
 * Spanish (es_ES)
+* Portuguese (pt_BR) - (Big thanks to Nick Trocado)
+* Russian (ru_RU) - (Big thanks to vosk72)
 
 == Installation ==
 1. Upload 'ucan-post.zip' to the '/wp-content/plugins/' directory.
 
-2. Activate the plugin through the 'Plugins' menu in WordPress, you will see a new page called "uCan Post" under the Settings portion of your dashboard.
+2. Activate the plugin through the 'Plugins' menu in WordPress, you will see a new section called "uCan Post" in your dashboard.
 
 3. Create a page for Posting and copy [uCan-Post] into it and publish.
 
@@ -55,6 +60,13 @@ n/a
 n/a
 
 == Changelog ==
+= 1.0.06 =
+* Changed the admin layout
+* Added ability to track post submissions
+* Added requirement for guests to fill out name and email
+* Added blockquote to WYSIWYG editor
+* Added Portuguese Brazilian Translation (Big thanks to Nick Trocado)
+* Added Russian Translation (Big thanks to vosk72)
 = 1.0.05 =
 * Made it possible for text on page to show above the submission form
 = 1.0.04 =

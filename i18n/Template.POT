@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uCan Post\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-12 02:04-0700\n"
-"PO-Revision-Date: 2010-09-12 02:06-0700\n"
+"POT-Creation-Date: 2010-10-24 13:51-0700\n"
+"PO-Revision-Date: 2010-10-24 13:52-0700\n"
 "Last-Translator: Paul <cartpauj@yahoo.com>\n"
 "Language-Team: cartpauj\n"
 "MIME-Version: 1.0\n"
@@ -189,6 +189,30 @@ msgstr ""
 msgid "Options successfully saved"
 msgstr ""
 
+#: .\views/ucan-admin-submissions-page.php:2
+msgid "uCan Post -- Submissions"
+msgstr ""
+
+#: .\views/ucan-admin-submissions-page.php:7
+msgid "Submissions"
+msgstr ""
+
+#: .\views/ucan-admin-submissions-page.php:8
+msgid "Submitter Name"
+msgstr ""
+
+#: .\views/ucan-admin-submissions-page.php:9
+msgid "Submitter Email"
+msgstr ""
+
+#: .\views/ucan-admin-submissions-page.php:10
+msgid "Type"
+msgstr ""
+
+#: .\views/ucan-admin-submissions-page.php:43
+msgid "No submissions have been made"
+msgstr ""
+
 #: .\views/ucan-preview.php:3
 msgid "Post Preview Area"
 msgstr ""
@@ -221,45 +245,58 @@ msgstr ""
 msgid "Create Another Post"
 msgstr ""
 
-#: .\views/ucan-submission-form.php:6
+#: .\views/ucan-submission-form.php:10
+msgid "Name"
+msgstr ""
+
+#: .\views/ucan-submission-form.php:11
+#: .\views/ucan-submission-form.php:17
+msgid "(required - not shown publically)"
+msgstr ""
+
+#: .\views/ucan-submission-form.php:16
+msgid "Email"
+msgstr ""
+
+#: .\views/ucan-submission-form.php:27
 msgid "Post Title"
 msgstr ""
 
-#: .\views/ucan-submission-form.php:7
-#: .\views/ucan-submission-form.php:29
-#: .\views/ucan-submission-form.php:89
+#: .\views/ucan-submission-form.php:28
+#: .\views/ucan-submission-form.php:50
+#: .\views/ucan-submission-form.php:110
 msgid "(required)"
 msgstr ""
 
-#: .\views/ucan-submission-form.php:18
+#: .\views/ucan-submission-form.php:39
 msgid "Post Excerpt"
 msgstr ""
 
-#: .\views/ucan-submission-form.php:28
+#: .\views/ucan-submission-form.php:49
 msgid "Post Content"
 msgstr ""
 
-#: .\views/ucan-submission-form.php:47
+#: .\views/ucan-submission-form.php:68
 msgid "Post Category"
 msgstr ""
 
-#: .\views/ucan-submission-form.php:69
+#: .\views/ucan-submission-form.php:90
 msgid "Post Tags"
 msgstr ""
 
-#: .\views/ucan-submission-form.php:70
+#: .\views/ucan-submission-form.php:91
 msgid "(separate tags by comma)"
 msgstr ""
 
-#: .\views/ucan-submission-form.php:88
+#: .\views/ucan-submission-form.php:109
 msgid "Image Verification"
 msgstr ""
 
-#: .\views/ucan-submission-form.php:101
+#: .\views/ucan-submission-form.php:122
 msgid "Click Publish below to submit your post"
 msgstr ""
 
-#: .\views/ucan-submission-form.php:105
+#: .\views/ucan-submission-form.php:126
 msgid "Publish"
 msgstr ""
 

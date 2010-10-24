@@ -1,6 +1,27 @@
 <div id="ucan_stylized">
 <form method="post" name="ucan_submission_form" action="<?php echo $this->ucan_action_url.'ucanpublish'; ?>">
 
+  <!-- START GUEST INFO -->
+  <?php
+    if($this->ucan_options['uCan_Post_Level'] == 'guest' && !$user_ID)
+    {
+  ?>
+      <label>
+        <?php echo __('Name', 'ucan-post'); ?>:
+        <span class="small"><?php echo __('(required - not shown publically)', 'ucan-post'); ?></span>
+      </label>
+      <input type="text" name="ucan_submission_guest_name" value="<?php echo stripslashes($_POST['ucan_submission_guest_name']); ?>" />
+
+      <label>
+        <?php echo __('Email', 'ucan-post'); ?>:
+        <span class="small"><?php echo __('(required - not shown publically)', 'ucan-post'); ?></span>
+      </label>
+      <input type="text" name="ucan_submission_guest_email" value="<?php echo stripslashes($_POST['ucan_submission_guest_email']); ?>" />
+  <?php
+    }
+  ?>
+  <!-- END GUEST INFO -->
+
   <!-- START TITLE -->
   <label>
     <?php echo __('Post Title', 'ucan-post'); ?>:
