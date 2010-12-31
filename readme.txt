@@ -3,7 +3,7 @@ Contributors: cartpauj
 Donate link: http://cartpauj.com/donate/
 Tags: ucan post, user posting, user posts, users, post, posts, blog posts, blog, blog content, add posts, users add posts, posting form, form, posting, cartpauj
 Requires at least: 2.8.6
-Tested up to: 3.0.1
+Tested up to: 3.1
 Stable tag: 1.0.07
 
 The easiest way to allow your users, and even guests, to create posts/content from a page on your WordPress-based site.
