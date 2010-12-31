@@ -63,6 +63,8 @@ if (!class_exists("uCanPost"))
 
       dbDelta($ucan_submissions_sql);
 
+      $role = get_role('contributor');
+      $role->add_cap('upload_files');
       $role = get_role('subscriber');
       $role->add_cap('upload_files');
     }
@@ -98,6 +100,17 @@ if (!class_exists("uCanPost"))
       return $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_content LIKE '%[uCan-Post]%' AND post_status = 'publish' AND post_type = 'page'");
     }
 
+    //Enque the scripts needed for the media uploader
+    function uCan_Enqueue_Scripts()
+    {
+      if($this->ucan_options['uCan_Use_WYSIWYG'])
+      {
+        wp_enqueue_script('jquery');
+        wp_enqueue_script('media-upload');
+        wp_enqueue_script('thickbox');
+      }
+    }
+
     //Add styles and scripts to the <head>
     function uCan_Add_To_WP_Head()
     {
@@ -105,10 +118,12 @@ if (!class_exists("uCanPost"))
       if(is_page($this->uCan_Page_ID()))
       {
         ?>
-          <link rel="stylesheet" type="text/css" media="all" href="<?php echo $this->ucan_plugin_url.'niceforms/niceforms-default.css'; ?>" />
+        <link rel="stylesheet" type="text/css" media="all" href="<?php echo $this->ucan_plugin_url.'niceforms/niceforms-default.css'; ?>" />
+        <?php
+        if($this->ucan_options['uCan_Use_WYSIWYG']) //Saves js code from being loaded when not needed - preventing more conflicts
+        {
+        ?>
           <link rel="stylesheet" id="thickbox-css"  href="<?php echo $this->ucan_wp_includes_url.'js/thickbox/thickbox.css'; ?>" type="text/css" media="all" />
-          <!-- TODO - Possibly add a setting to NOT load the jquery if users have problems with the following line -->
-          <script type="text/javascript" src="<?php echo $this->ucan_wp_admin_url.'load-scripts.php?c=1&amp;load=jquery,utils,thickbox,media-upload'; ?>"></script><!-- Left Out ,quicktags, editor -->
           <script type="text/javascript" src="<?php echo $this->ucan_js_url.'tinymce/tiny_mce.js'; ?>" ></script>
           <script type="text/javascript">
             tinyMCE.init({
@@ -139,6 +154,7 @@ if (!class_exists("uCanPost"))
             /* ]]> */
           </script>
         <?php
+        }
       }
     }
 
@@ -148,10 +164,9 @@ if (!class_exists("uCanPost"))
     function uCan_Add_Admin_Page()
     {
       $this->uCan_Set_Links();
-      add_menu_page(__('uCan Post - Overview', 'ucan-post'), 'uCan Post', 9, 'ucanmain', array(&$this, 'uCan_Display_Admin_Options_Page'), $this->ucan_images_url.'menu_icon.png');
+      add_menu_page(__('uCan Post - Options', 'ucan-post'), 'uCan Post', 9, 'ucanmain', array(&$this, 'uCan_Display_Admin_Options_Page'), $this->ucan_images_url.'menu_icon.png');
       add_submenu_page( 'ucanmain', __('uCan Post - Options', 'ucan-post'), __('Options', 'ucan-post'), 9, 'ucanmain', array(&$this, 'uCan_Display_Admin_Options_Page'));
       add_submenu_page( 'ucanmain', __('uCan Post - Submissions', 'ucan-post'), __('Submissions', 'ucan-post'), 9, 'ucansubmissions', array(&$this, 'uCan_Display_Admin_Submissions_Page'));
-      //add_submenu_page( 'ucanmain', __('uCan Post - Overview', 'ucan-post'), __('Overview', 'ucan-post'), 9, 'ucanoverview', array(&$this, 'uCan_Display_Admin_Overview_Page'));
     }
 
     //Sets up variables and displays the admin page
@@ -168,6 +183,21 @@ if (!class_exists("uCanPost"))
 
     function uCan_Display_Admin_Submissions_Page()
     {
+      if(isset($_GET['ucanaction']) && $_GET['ucanaction'] == 'publish')
+      {
+        $pid = $_GET['pid'];
+        $tomail = stripslashes(urldecode($_GET['tomail']));
+        $post = array();
+        $post['ID'] = $pid;
+        $post['post_status'] = "publish";
+
+        if($pid)
+        {
+          wp_update_post($post);
+          $this->uCan_Maybe_Email_User($pid, $tomail);
+          require($this->ucan_views_dir.'ucan-admin-post-published.php');
+        }
+      }
       $submissions = $this->uCan_Get_All_Submissions();
       require($this->ucan_views_dir.'ucan-admin-submissions-page.php');
     }
@@ -181,6 +211,7 @@ if (!class_exists("uCanPost"))
                                   'uCan_Show_Categories'        => false,
                                   'uCan_Default_Category'       => 1,
                                   'uCan_Allow_Author'           => true,
+                                  'uCan_Allow_Author_Edits'     => false,
                                   'uCan_Default_Author'         => 1,
                                   'uCan_Allow_Tags'             => false,
                                   'uCan_Default_Tags'           => '',
@@ -188,9 +219,11 @@ if (!class_exists("uCanPost"))
                                   'uCan_Allow_Comments'         => true,
                                   'uCan_Allow_Pings'            => true,
                                   'uCan_Email_Admin'            => true,
+                                  'uCan_Email_User'             => false,
                                   'uCan_Moderate_Posts'         => true,
                                   'uCan_Allow_Uploads'          => true,
-                                  'uCan_Show_Captcha'           => false
+                                  'uCan_Show_Captcha'           => false,
+                                  'uCan_Use_WYSIWYG'            => true
       );
 
       if(!empty($ucan_old_options))
@@ -209,6 +242,7 @@ if (!class_exists("uCanPost"))
                                     'uCan_Show_Categories'        => $_POST['ucan_show_categories'],
                                     'uCan_Default_Category'       => $_POST['ucan_default_category'],
                                     'uCan_Allow_Author'           => $_POST['ucan_allow_author'],
+                                    'uCan_Allow_Author_Edits'     => $_POST['ucan_allow_author_edits'],
                                     'uCan_Default_Author'         => $_POST['ucan_default_author'],
                                     'uCan_Allow_Tags'             => $_POST['ucan_allow_tags'],
                                     'uCan_Default_Tags'           => $_POST['ucan_default_tags'],
@@ -216,9 +250,11 @@ if (!class_exists("uCanPost"))
                                     'uCan_Allow_Comments'         => $_POST['ucan_allow_comments'],
                                     'uCan_Allow_Pings'            => $_POST['ucan_allow_pings'],
                                     'uCan_Email_Admin'            => $_POST['ucan_email_admin'],
+                                    'uCan_Email_User'             => $_POST['ucan_email_user'],
                                     'uCan_Moderate_Posts'         => $_POST['ucan_moderate_posts'],
                                     'uCan_Allow_Uploads'          => $_POST['ucan_allow_uploads'],
-                                    'uCan_Show_Captcha'           => $_POST['ucan_show_captcha']
+                                    'uCan_Show_Captcha'           => $_POST['ucan_show_captcha'],
+                                    'uCan_Use_WYSIWYG'            => $_POST['ucan_use_wysiwyg']
         );
         update_option($this->ucan_options_name, $ucan_save_options);
         $this->uCan_Set_Admin_Options(); //Make sure new options are updated in the class instance
@@ -375,6 +411,59 @@ if (!class_exists("uCanPost"))
     }
 
 
+/************************UPDATE POST************************/
+    //Shows the edit post form
+    function uCan_Display_Edit_Post()
+    {
+      global $user_ID;
+      $pid = $_GET['pid'];
+      if($pid && $user_ID && $this->ucan_options['uCan_Allow_Author_Edits']) //$user_ID and options check here makes sure guest hackers cannot edit posts
+      {
+        $post = get_post($pid);
+          require($this->ucan_views_dir.'ucan-edit-post-form.php');
+      }
+      else
+      {
+        require($this->ucan_views_dir.'ucan-unknown-error.php');
+      }
+    }
+
+    //Updates the post if all checks out ok and notifies user if successful
+    function uCan_Display_Update_Post()
+    {
+      $post = array();
+      $postid = 0;
+      $post['ID'] = $_GET['eid'];
+      $post['post_title'] = stripslashes($_POST['ucan_submission_title']);
+      $post['post_content'] = stripslashes($_POST['ucan_submission_content']);
+      $post['post_excerpt'] = stripslashes($_POST['ucan_submission_excerpt']);
+
+      if(!empty($post['post_title']) && !empty($post['post_content'])) //Make sure title and content aren't left blank
+        $postid = wp_update_post($post);
+
+      if($postid)
+        require($this->ucan_views_dir.'ucan-updated-post.php');
+      else
+        require($this->ucan_views_dir.'ucan-unknown-error.php');
+    }
+
+    //Displays an edit link at the bottom of the posts if the user is the same as the author
+    function uCan_Add_Edit_Post_Link($text)
+    {
+      global $user_ID;
+      $this->uCan_Set_Links();
+
+      $pid = get_the_ID();
+      $puid = get_the_author_ID();
+      $edit = "<a href='".$this->ucan_action_url."editpost&pid=".$pid."'>".__('Edit your submission', 'ucan-post')."</a>";
+
+      if(!$this->ucan_options['uCan_Allow_Author_Edits'] || $user_ID != $puid || is_page())
+        return $text;
+
+      return $text."<br/>".$edit;
+    }
+
+
 /************************FORM DISPLAY***********************/
     //Display the post submission form
     function uCan_Display_Form()
@@ -429,6 +518,12 @@ if (!class_exists("uCanPost"))
           /*case 'ucannojs':
             $out .= "<strong>".__('Your browser does not support JavaScript', 'ucan-post')."</strong>";
             break;*/
+          case 'editpost':
+            $this->uCan_Display_Edit_Post();
+            break;
+          case 'updatepost':
+            $this->uCan_Display_Update_Post();
+            break;
           default:
             $this->uCan_Display_Form();
             break;
@@ -448,7 +543,7 @@ if (!class_exists("uCanPost"))
     function uCan_Get_All_Users()
     {
       global $wpdb;
-      return $wpdb->get_results($wpdb->prepare("SELECT user_login, ID FROM $wpdb->users ORDER BY user_login ASC"));
+      return $wpdb->get_results($wpdb->prepare("SELECT user_login, ID FROM {$wpdb->users} ORDER BY user_login ASC"));
     }
 
     //Get all post categories whether empty or not
@@ -476,6 +571,24 @@ if (!class_exists("uCanPost"))
 			}
 		}
 
+    //Email the user when their post is published
+    function uCan_Maybe_Email_User($pid, $tomail)
+    {
+      if ($this->ucan_options['uCan_Email_User'])
+      {
+        $link = get_permalink($pid);
+        $sendername = get_option('blogname');
+        $frommail = get_option('admin_email');
+        $headers = "MIME-Version: 1.0\r\n" .
+          "From: ".$sendername." "."<".$frommail.">\n" . 
+          "Content-Type: text/HTML; charset=\"" . get_settings('blog_charset') . "\"\r\n";
+        $mailMessage = '<p>'.__('Your post was published. Follow the link below to view it.', 'ucan-post').'<br/><a href="'.$link.'"><strong>'.__('View Submission', 'ucan-post').'</strong></a></p>';
+        if(!empty($tomail) && !empty($frommail))
+          wp_mail($tomail, __('Post Published', 'ucan-post'), $mailMessage, $headers);
+			}
+		}
+
+    //Validates the guests email address to make sure it's semi-valid
     function uCan_Validate_Email_Address($input)
     {
       $atom = '[a-zA-Z0-9!#$%&\'*+\-\/=?^_`{|}~]+';
@@ -495,7 +608,6 @@ if (!class_exists("uCanPost"))
       else
         return $string;
     }*/
-
 
   } //END CLASS
 } //END IF

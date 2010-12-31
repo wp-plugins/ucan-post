@@ -25,6 +25,16 @@
         </tr>
 
         <tr>
+          <td><?php echo __('Use WYSIWYG Editor:', 'ucan-post'); ?><br/>
+            <small><?php echo __('Disabling the editor also disables media uploads', 'ucan-post'); ?></small>
+          </td>
+          <td>
+            <input type="checkbox" name="ucan_use_wysiwyg" value="true" <?php if($this->ucan_options['uCan_Use_WYSIWYG']){echo 'checked="checked"';} ?> />
+            <em><?php echo __('(Default = True)', 'ucan-post'); ?></em>
+          </td>
+        </tr>
+
+        <tr>
           <td><?php echo __('Allow submitter to select the post category:', 'ucan-post'); ?></td>
           <td>
             <input type="checkbox" name="ucan_show_categories" value="true" <?php if($this->ucan_options['uCan_Show_Categories']){echo 'checked="checked"';} ?> />
@@ -53,6 +63,16 @@
           <td>
             <input type="checkbox" name="ucan_allow_author" value="true" <?php if($this->ucan_options['uCan_Allow_Author']){echo 'checked="checked"';} ?> />
             <em><?php echo __('(Default = True)', 'ucan-post'); ?></em>
+          </td>
+        </tr>
+
+        <tr>
+          <td><?php echo __('Allow users to edit their own posts:', 'ucan-post'); ?><br/>
+            <small><?php echo __('Above option must be enabled for this to work', 'ucan-post'); ?></small>
+          </td>
+          <td>
+            <input type="checkbox" name="ucan_allow_author_edits" value="true" <?php if($this->ucan_options['uCan_Allow_Author_Edits']){echo 'checked="checked"';} ?> />
+            <em><?php echo __('(Default = False)', 'ucan-post'); ?></em>
           </td>
         </tr>
 
@@ -149,6 +169,16 @@
           <td>
             <input type="checkbox" name="ucan_email_admin" value="true" <?php if($this->ucan_options['uCan_Email_Admin']){echo 'checked="checked"';} ?> />
             <em><?php echo __('(Default = True)', 'ucan-post'); ?></em>
+          </td>
+        </tr>
+
+        <tr>
+          <td><?php echo __('Email User When Their Submission Is Approved:', 'ucan-post'); ?><br/>
+            <small><?php echo __('For this to work you must approve the post through the submissions area of this plugin', 'ucan-post'); ?></small>
+          </td>
+          <td>
+            <input type="checkbox" name="ucan_email_user" value="true" <?php if($this->ucan_options['uCan_Email_User']){echo 'checked="checked"';} ?> />
+            <em><?php echo __('(Default = False)', 'ucan-post'); ?></em>
           </td>
         </tr>
 

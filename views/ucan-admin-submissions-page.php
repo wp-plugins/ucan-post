@@ -25,8 +25,12 @@
               <td>
                 <strong><a href="<?php echo $link; ?>" target="_blank"><?php echo $post_info->post_title; ?></strong></a> (<?php echo $post_info->post_status; ?>)
                 <div class="row-actions">
-                  <a href="<?php echo $link; ?>">View</a> |
-                  <a href="<?php echo $ucan_wp_admin_url.'post.php?post='.$submission->postid.'&action=edit'; ?>">Edit</a>
+                  <a href="<?php echo $link; ?>"><?php echo __('View', 'ucan-post'); ?></a> |
+                  <a href="<?php echo $ucan_wp_admin_url.'post.php?post='.$submission->postid.'&action=edit'; ?>"><?php echo __('Edit', 'ucan-post'); ?></a>
+  <?php
+                  if($post_info->post_status == 'pending')
+                    echo ' | <a href="'.'admin.php?page=ucansubmissions&ucanaction=publish&pid='.$submission->postid.'&tomail='.urlencode($submission->email).'">'.__('Publish', 'ucan-post').'</a>';
+  ?>
                 </div>
               </td>
               <td><?php echo $submission->name; ?></td>
