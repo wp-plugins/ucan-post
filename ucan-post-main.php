@@ -3,7 +3,7 @@
 Plugin Name: uCan Post
 Plugin URI: http://cartpauj.com/projects/ucan-post-plugin
 Description: uCan Post is the easiest way to allow your users to post content to your blog without having to use the WordPress Dashboard.
-Version: 1.0.06
+Version: 1.0.07
 Author: Cartpauj
 Author URI: http://cartpauj.com
 Text Domain: ucan-post
@@ -46,8 +46,11 @@ if (isset($uCan_Post))
   add_shortcode('uCan-Post', array(&$uCan_Post, "uCan_Display"));
 
   //ADD ACTIONS
-  //add_action('init', array(&$uCan_Post, "uCan_JS_Init"));
+  add_action('init', array(&$uCan_Post, "uCan_Enqueue_Scripts"));
   add_action('wp_head', array(&$uCan_Post, "uCan_Add_To_WP_Head"));
   add_action('admin_menu', array(&$uCan_Post, "uCan_Add_Admin_Page"));
+
+  //ADD FILTERS
+  add_filter('the_content', array(&$uCan_Post, "uCan_Add_Edit_Post_Link"));
 }
 ?>

@@ -1,61 +1,61 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: uCan Post\n"
+"Project-Id-Version: ucan-post\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-31 10:33-0700\n"
-"PO-Revision-Date: 2010-12-31 10:35-0700\n"
+"PO-Revision-Date: \n"
 "Last-Translator: Paul <cartpauj@yahoo.com>\n"
-"Language-Team: cartpauj\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: .\\views\n"
+"Language: \n"
+"X-Poedit-Language: Turkish\n"
+"X-Poedit-Country: TURKEY\n"
 
 #: .\views/ucan-admin-options-form.php:2
 msgid "uCan Post -- Admin Options"
-msgstr "uCan Post - Administrador de Opciones"
+msgstr "uCan Post -- Yönetici Seçenekleri"
 
 #: .\views/ucan-admin-options-form.php:7
 msgid "Setting"
-msgstr "Marco"
+msgstr "Ayarlar"
 
 #: .\views/ucan-admin-options-form.php:8
 msgid "Value"
-msgstr "Valor"
+msgstr "Değer"
 
 #: .\views/ucan-admin-options-form.php:13
 msgid "User Level required to create posts:"
-msgstr "Nivel de usuario necesarios para crear mensajes:"
+msgstr "İleti yazabilmesi için gereken en düşük Kullanıcı seviyesi:"
 
 #: .\views/ucan-admin-options-form.php:16
 msgid "Guest"
-msgstr "Habitación"
+msgstr "Ziyaretçi"
 
 #: .\views/ucan-admin-options-form.php:17
 msgid "Subscriber"
-msgstr "Suscriptor"
+msgstr "Takipçi"
 
 #: .\views/ucan-admin-options-form.php:18
 msgid "Contributor"
-msgstr "Colaborador"
+msgstr "İçerik Sağlayıcı"
 
 #: .\views/ucan-admin-options-form.php:19
 msgid "Author"
-msgstr "Autor"
+msgstr "Yazar"
 
 #: .\views/ucan-admin-options-form.php:20
 msgid "Editor"
-msgstr "Editor"
+msgstr "Editör"
 
 #: .\views/ucan-admin-options-form.php:21
 msgid "Administrator"
-msgstr "Administrador"
+msgstr "Yönetici"
 
 #: .\views/ucan-admin-options-form.php:23
 msgid "(Default = Subscriber)"
-msgstr "(Por defecto suscriptor =)"
+msgstr "(Varsayılan = Takipçi)"
 
 #: .\views/ucan-admin-options-form.php:28
 msgid "Use WYSIWYG Editor:"
@@ -73,11 +73,11 @@ msgstr ""
 #: .\views/ucan-admin-options-form.php:153
 #: .\views/ucan-admin-options-form.php:171
 msgid "(Default = True)"
-msgstr "(Por defecto = verdadero)"
+msgstr "(Varsayılan = Evet)"
 
 #: .\views/ucan-admin-options-form.php:38
 msgid "Allow submitter to select the post category:"
-msgstr "Permitir remitente para seleccionar la categoría post:"
+msgstr "İçerik sağlayıcıya kategori seçmesi için izin ver:"
 
 #: .\views/ucan-admin-options-form.php:41
 #: .\views/ucan-admin-options-form.php:75
@@ -86,24 +86,24 @@ msgstr "Permitir remitente para seleccionar la categoría post:"
 #: .\views/ucan-admin-options-form.php:163
 #: .\views/ucan-admin-options-form.php:181
 msgid "(Default = False)"
-msgstr "(Default = false)"
+msgstr "(Varsayılan = Hayır)"
 
 #: .\views/ucan-admin-options-form.php:46
 msgid "Default Category for submitted posts:"
-msgstr "Categoría por defecto para mensajes enviados:"
+msgstr "İçerikler için varsayılan kategori:"
 
 #: .\views/ucan-admin-options-form.php:57
 msgid "(Default = Uncategorized)"
-msgstr "(Por defecto = hasta)"
+msgstr "(Varsayılan = Kategorilenmemiş)"
 
 #: .\views/ucan-admin-options-form.php:62
 msgid "Set the Post Author to the name of the User who submitted it:"
-msgstr "Ajuste el Autor de la entrada al nombre del usuario que lo envía:"
+msgstr "Yazı gönderenin adını Yazar adı olarak kullan:"
 
 #: .\views/ucan-admin-options-form.php:70
 #, fuzzy
 msgid "Allow users to edit their own posts:"
-msgstr "Permitir remitente para entrar en las etiquetas mensaje:"
+msgstr "İçerik sağlayana etiket girmesi için izin ver:"
 
 #: .\views/ucan-admin-options-form.php:71
 msgid "Above option must be enabled for this to work"
@@ -111,67 +111,67 @@ msgstr ""
 
 #: .\views/ucan-admin-options-form.php:80
 msgid "Default Author for submitted posts:"
-msgstr "Predeterminado Autor de mensajes enviados:"
+msgstr "Girilen içerikler için varsayılan Yazar:"
 
 #: .\views/ucan-admin-options-form.php:81
 msgid "If the above option is selected this option will only be used for guest submissions"
-msgstr "Si la opción anterior se selecciona esta opción sólo se utilizará para la presentación de resultados"
+msgstr "Yukarıdaki seçenek işaretliyse bu seçenek sadece misafir kullanıcılar için kullanılacak"
 
 #: .\views/ucan-admin-options-form.php:93
 msgid "(Default = admin)"
-msgstr "(Por defecto = admin)"
+msgstr "(Varsayılan = birisi)"
 
 #: .\views/ucan-admin-options-form.php:98
 msgid "Allow submitter to enter post tags:"
-msgstr "Permitir remitente para entrar en las etiquetas mensaje:"
+msgstr "İçerik sağlayana etiket girmesi için izin ver:"
 
 #: .\views/ucan-admin-options-form.php:106
 msgid "Default tags to use for submissions:"
-msgstr "etiquetas por defecto a utilizar para las presentaciones:"
+msgstr "Girilenlerde kullanılacak varsayılan etiketler:"
 
 #: .\views/ucan-admin-options-form.php:107
 msgid "Use a comma separated list (EX: pizza, rice, olives, ...)"
-msgstr "Use una lista separada por comas (Por ejemplo: pizza, arroz, aceitunas, ...)"
+msgstr "Virgüllerle ayrılmış bir liste kullan (ÖRN: pizza, prinç, zeytinler, ...)"
 
 #: .\views/ucan-admin-options-form.php:111
 msgid "(Default = None)"
-msgstr "(Por defecto = None)"
+msgstr "(Varsayılan = Hiçbiri)"
 
 #: .\views/ucan-admin-options-form.php:116
 msgid "Allow submitter to create a post excerpt:"
-msgstr "Permitir remitente para crear un extracto del anuncio:"
+msgstr "İçerik sağlayıcının alıntı yapmasına izin ver:"
 
 #: .\views/ucan-admin-options-form.php:124
 msgid "Allow comments on submitted posts:"
-msgstr "Permitir comentarios en mensajes enviados:"
+msgstr "Girilen içeriklerde yorumlara izin ver:"
 
 #: .\views/ucan-admin-options-form.php:132
 msgid "Allow Trackbacks/Pingbacks on submitted posts:"
-msgstr "Permitir Trackbacks / Pingbacks de mensajes enviados:"
+msgstr "Girilen içeriklerde Geri izlemeye/Pinglemeye izin ver:"
 
 #: .\views/ucan-admin-options-form.php:140
 msgid "Moderate new posts:"
-msgstr "Moderado nuevos puestos:"
+msgstr "Yeni içerikleri gözden geçir:"
 
 #: .\views/ucan-admin-options-form.php:148
 msgid "Allow uploads on sumbission:"
-msgstr "Permita que los archivos subidos en sumbission:"
+msgstr "Dosya yüklemeye izin ver:"
 
 #: .\views/ucan-admin-options-form.php:149
 msgid "NOTE: For security reasons, only registered members can upload files"
-msgstr "NOTA: Por razones de seguridad, sólo los miembros registrados pueden subir archivos"
+msgstr "NOT: Güvenlik nedeniyle, sadece kayıtlı kullanıcılar dosya yükleyebilir"
 
 #: .\views/ucan-admin-options-form.php:158
 msgid "Show CAPTCHA image:"
-msgstr "Mostrar Imagen de seguridad:"
+msgstr "CAPTCHA simgesini göster:"
 
 #: .\views/ucan-admin-options-form.php:159
 msgid "If you are allowing guests to post, it is recommended that you enable this"
-msgstr "Si se permite a los huéspedes de correos, se recomienda que habilite esta"
+msgstr "Eğer misafirlere gönderme izni vermişseniz, bunu etkinleştirmeniz önderilir"
 
 #: .\views/ucan-admin-options-form.php:168
 msgid "Recieve an Email when a new post is submitted:"
-msgstr "Reciba un correo electrónico cuando un nuevo puesto se presenta:"
+msgstr "Bir içerik gönderildiğinde Eposta ile bildir:"
 
 #: .\views/ucan-admin-options-form.php:176
 msgid "Email User When Their Submission Is Approved:"
@@ -183,66 +183,64 @@ msgstr ""
 
 #: .\views/ucan-admin-options-form.php:188
 msgid "Save Options"
-msgstr "Opciones para guardar"
+msgstr "Seçenekleri Kaydet"
 
 #: .\views/ucan-admin-options-form.php:195
 msgid "uCan Post -- Setup Instructions"
-msgstr "uCan Post - Instrucciones de instalación"
+msgstr "uCan Post -- Kurulum Adımları"
 
 #: .\views/ucan-admin-options-form.php:198
 msgid "Create a new page (this is the page where your users will submit posts from)"
-msgstr "Crear una página nueva (esta es la página donde los usuarios van a presentar los mensajes de)"
+msgstr "Yeni bir sayfa oluştur (bu kullanıcılarınızın içeriklerini göndermesi için kullanılacak sayfadır)"
 
 #: .\views/ucan-admin-options-form.php:199
 msgid "Paste"
-msgstr "Pegar"
+msgstr "Yapıştır"
 
 #: .\views/ucan-admin-options-form.php:199
 msgid "under the HTML tab of the page editor"
-msgstr "en la pestaña HTML del editor de la página"
+msgstr "Sayfa düzenleyicinin altındaki HTML sekmesi"
 
 #: .\views/ucan-admin-options-form.php:200
 msgid "Publish the page"
-msgstr "Publicar la página"
+msgstr "Sayfayı yayınla"
 
 #: .\views/ucan-admin-options-form.php:201
 msgid "Setup your admin settings the way you wish and save"
-msgstr "Configurar su configuración de administrador de la forma que desee y guardar"
+msgstr "Yönetici seçenekleriniz istediğiniz şekilde ayarlayıp kaydedin"
 
 #: .\views/ucan-admin-options-form.php:202
 msgid "Done! Pretty easy eh?"
-msgstr "¡Ya está! Muy fácil ¿eh?"
+msgstr "Tamam! Çok kolay di mi?"
 
 #: .\views/ucan-admin-options-saved.php:1
 msgid "Options successfully saved"
-msgstr "Opciones de guardado con éxito"
+msgstr "Seçenekler başarıyla kaydedildi"
 
 #: .\views/ucan-admin-post-published.php:1
 #, fuzzy
 msgid "The post was successfully published!"
-msgstr "Opciones de guardado con éxito"
+msgstr "Seçenekler başarıyla kaydedildi"
 
 #: .\views/ucan-admin-submissions-page.php:2
-#, fuzzy
 msgid "uCan Post -- Submissions"
-msgstr "uCan Post - Administrador de Opciones"
+msgstr "uCan Post - İçerikler"
 
 #: .\views/ucan-admin-submissions-page.php:7
-#, fuzzy
 msgid "Submissions"
-msgstr "Ver mi comunicación"
+msgstr "İçerikler"
 
 #: .\views/ucan-admin-submissions-page.php:8
 msgid "Submitter Name"
-msgstr ""
+msgstr "Gönderenin Adı"
 
 #: .\views/ucan-admin-submissions-page.php:9
 msgid "Submitter Email"
-msgstr ""
+msgstr "Gönderenin Eposta Adresi"
 
 #: .\views/ucan-admin-submissions-page.php:10
 msgid "Type"
-msgstr ""
+msgstr "Tür"
 
 #: .\views/ucan-admin-submissions-page.php:28
 msgid "View"
@@ -251,21 +249,21 @@ msgstr ""
 #: .\views/ucan-admin-submissions-page.php:29
 #, fuzzy
 msgid "Edit"
-msgstr "Editor"
+msgstr "Editör"
 
 #: .\views/ucan-admin-submissions-page.php:32
 #: .\views/ucan-submission-form.php:126
 msgid "Publish"
-msgstr "Publicar"
+msgstr "Yayınla"
 
 #: .\views/ucan-admin-submissions-page.php:47
 msgid "No submissions have been made"
-msgstr ""
+msgstr "Yaoılmış bir içerik yok"
 
 #: .\views/ucan-edit-post-form.php:6
 #: .\views/ucan-submission-form.php:27
 msgid "Post Title"
-msgstr "Post Título"
+msgstr "İçerik Başlığı"
 
 #: .\views/ucan-edit-post-form.php:7
 #: .\views/ucan-edit-post-form.php:29
@@ -273,22 +271,22 @@ msgstr "Post Título"
 #: .\views/ucan-submission-form.php:50
 #: .\views/ucan-submission-form.php:110
 msgid "(required)"
-msgstr "(Requerido)"
+msgstr "(gerekli)"
 
 #: .\views/ucan-edit-post-form.php:18
 #: .\views/ucan-submission-form.php:39
 msgid "Post Excerpt"
-msgstr "Extracto de Correos"
+msgstr "İçerik Alıntısı"
 
 #: .\views/ucan-edit-post-form.php:28
 #: .\views/ucan-submission-form.php:49
 msgid "Post Content"
-msgstr "Publicar contenido"
+msgstr "İçerik Gövdesi"
 
 #: .\views/ucan-edit-post-form.php:43
 #, fuzzy
 msgid "Click Update below to submit your changes"
-msgstr "Haga clic en Publicar abajo para enviar su mensaje"
+msgstr "İçeriğinizi göndermek için Yayınla düğmesini tıklayın"
 
 #: .\views/ucan-edit-post-form.php:47
 msgid "Update"
@@ -296,79 +294,79 @@ msgstr ""
 
 #: .\views/ucan-preview.php:3
 msgid "Post Preview Area"
-msgstr "Mensaje área de vista previa"
+msgstr "İçerik Görüntüleme Alanı"
 
 #: .\views/ucan-preview.php:4
 msgid "You can continue editing below the preview area"
-msgstr "Puede continuar con la edición bajo el área de vista previa"
+msgstr "Aşağıdaki görüntüleme alanından düzenlemeye devam edebilirsiniz"
 
 #: .\views/ucan-publish.php:3
 msgid "Congratulations, your post was submitted successfully!"
-msgstr "Felicitaciones, su mensaje se ha enviado correctamente!"
+msgstr "Tebrikler, içeriğiniz başarıyla alındı!"
 
 #: .\views/ucan-publish.php:13
 msgid "Your post is awaiting moderation and should be available soon."
-msgstr "Su mensaje está en espera de moderación y debería estar disponible pronto."
+msgstr "İçeriğiniz inceleniyor, bir süre sonra aktif olacaktır."
 
 #: .\views/ucan-publish.php:19
 msgid "View My Submission"
-msgstr "Ver mi comunicación"
+msgstr "Gönderdiğim İçerikleri Göster"
 
 #: .\views/ucan-publish.php:23
 #: .\views/ucan-updated-post.php:12
 msgid "What would you like to do next?"
-msgstr "¿Qué te gustaría hacer ahora?"
+msgstr "Şimdi ne yapmak istersiniz?"
 
 #: .\views/ucan-publish.php:24
 #: .\views/ucan-updated-post.php:13
 msgid "Visit Home Page"
-msgstr "Visitar la página de Inicio"
+msgstr "Anasayfaya Dön"
 
 #: .\views/ucan-publish.php:24
 msgid "Create Another Post"
-msgstr "Crear otro mensaje"
+msgstr "Başka Bir İçerik Oluştur"
 
 #: .\views/ucan-submission-form.php:10
 msgid "Name"
-msgstr ""
+msgstr "Adınız"
 
 #: .\views/ucan-submission-form.php:11
 #: .\views/ucan-submission-form.php:17
 msgid "(required - not shown publically)"
-msgstr ""
+msgstr "(gerekli - adınız yayınlanmayacak)"
 
 #: .\views/ucan-submission-form.php:16
 msgid "Email"
-msgstr ""
+msgstr "Eposta"
 
 #: .\views/ucan-submission-form.php:68
 msgid "Post Category"
-msgstr "Categoría del puesto"
+msgstr "İçerik Kategorisi"
 
 #: .\views/ucan-submission-form.php:90
 msgid "Post Tags"
-msgstr "Post Tags"
+msgstr "İçerik Etiketleri"
 
 #: .\views/ucan-submission-form.php:91
 msgid "(separate tags by comma)"
-msgstr "(Etiquetas separadas por comas)"
+msgstr "(etiketleri virgül ile ayırınız)"
 
 #: .\views/ucan-submission-form.php:109
 msgid "Image Verification"
-msgstr "Imagen de Verificación"
+msgstr "Resim Doğrulaması"
 
 #: .\views/ucan-submission-form.php:122
 msgid "Click Publish below to submit your post"
-msgstr "Haga clic en Publicar abajo para enviar su mensaje"
+msgstr "İçeriğinizi göndermek için Yayınla düğmesini tıklayın"
 
 #: .\views/ucan-unknown-error.php:1
 msgid "A fatal, unknown error has occured!"
-msgstr "Un error grave, desconocido ha ocurrido!"
+msgstr "Önemli ve bilinmeyen bir hata oluştu!"
 
 #: .\views/ucan-updated-post.php:3
 #, fuzzy
 msgid "Congratulations, your post was successfully updated"
-msgstr "Felicitaciones, su mensaje se ha enviado correctamente!"
+msgstr "Tebrikler, içeriğiniz başarıyla alındı!"
 
 #: .\views/ucan-updated-post.php:8
 msgid "View The Post"
@@ -377,25 +375,25 @@ msgstr ""
 #: .\views/ucan-updated-post.php:13
 #, fuzzy
 msgid "Create A New Post"
-msgstr "Crear otro mensaje"
+msgstr "Başka Bir İçerik Oluştur"
 
 #: .\views/ucan-upload-buttons.php:2
 msgid "Upload/Insert"
-msgstr "Subir / Insertar"
+msgstr "Yükle/Gir"
 
 #: .\views/ucan-upload-buttons.php:2
 msgid "Add an Image"
-msgstr "Añadir una imagen"
+msgstr "Bir Resim Ekle"
 
 #: .\views/ucan-upload-buttons.php:2
 msgid "Add Video"
-msgstr "Añadir vídeo"
+msgstr "Video Ekle"
 
 #: .\views/ucan-upload-buttons.php:2
 msgid "Add Audio"
-msgstr "Añadir Audio"
+msgstr "Ses Ekle"
 
 #: .\views/ucan-upload-buttons.php:2
 msgid "Add Media"
-msgstr "Añadir los medios de comunicación"
+msgstr "Ortam Ekle"
 

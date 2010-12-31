@@ -51,7 +51,7 @@
   </label>
   <?php
     global $user_ID;
-    if($user_ID && $this->ucan_options['uCan_Allow_Uploads'])
+    if($user_ID && $this->ucan_options['uCan_Allow_Uploads'] && $this->ucan_options['uCan_Use_WYSIWYG'])
     {
       require($this->ucan_views_dir.'ucan-upload-buttons.php');
     }

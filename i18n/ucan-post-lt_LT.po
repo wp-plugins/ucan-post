@@ -15,47 +15,47 @@ msgstr ""
 
 #: .\views/ucan-admin-options-form.php:2
 msgid "uCan Post -- Admin Options"
-msgstr "uCan Post - Administrador de Opciones"
+msgstr "Ucan Post - Administracijos Nustatymai"
 
 #: .\views/ucan-admin-options-form.php:7
 msgid "Setting"
-msgstr "Marco"
+msgstr "Nustatymai"
 
 #: .\views/ucan-admin-options-form.php:8
 msgid "Value"
-msgstr "Valor"
+msgstr "Reikšmė"
 
 #: .\views/ucan-admin-options-form.php:13
 msgid "User Level required to create posts:"
-msgstr "Nivel de usuario necesarios para crear mensajes:"
+msgstr "Vartotojo lygis reikalingas sukurti įrašą:"
 
 #: .\views/ucan-admin-options-form.php:16
 msgid "Guest"
-msgstr "Habitación"
+msgstr "Svečias"
 
 #: .\views/ucan-admin-options-form.php:17
 msgid "Subscriber"
-msgstr "Suscriptor"
+msgstr "Prenumeratorius"
 
 #: .\views/ucan-admin-options-form.php:18
 msgid "Contributor"
-msgstr "Colaborador"
+msgstr "Pagalbininkas"
 
 #: .\views/ucan-admin-options-form.php:19
 msgid "Author"
-msgstr "Autor"
+msgstr "Autorius"
 
 #: .\views/ucan-admin-options-form.php:20
 msgid "Editor"
-msgstr "Editor"
+msgstr "Redaktorius"
 
 #: .\views/ucan-admin-options-form.php:21
 msgid "Administrator"
-msgstr "Administrador"
+msgstr "Administratorius"
 
 #: .\views/ucan-admin-options-form.php:23
 msgid "(Default = Subscriber)"
-msgstr "(Por defecto suscriptor =)"
+msgstr "(Numatytas = Prenumeratorius)"
 
 #: .\views/ucan-admin-options-form.php:28
 msgid "Use WYSIWYG Editor:"
@@ -73,11 +73,11 @@ msgstr ""
 #: .\views/ucan-admin-options-form.php:153
 #: .\views/ucan-admin-options-form.php:171
 msgid "(Default = True)"
-msgstr "(Por defecto = verdadero)"
+msgstr "(Numatytas = Taip)"
 
 #: .\views/ucan-admin-options-form.php:38
 msgid "Allow submitter to select the post category:"
-msgstr "Permitir remitente para seleccionar la categoría post:"
+msgstr "Leisti pateikėjui pasirinkti kategorijas įrašo:"
 
 #: .\views/ucan-admin-options-form.php:41
 #: .\views/ucan-admin-options-form.php:75
@@ -86,24 +86,24 @@ msgstr "Permitir remitente para seleccionar la categoría post:"
 #: .\views/ucan-admin-options-form.php:163
 #: .\views/ucan-admin-options-form.php:181
 msgid "(Default = False)"
-msgstr "(Default = false)"
+msgstr "(Numatytas = Ne)"
 
 #: .\views/ucan-admin-options-form.php:46
 msgid "Default Category for submitted posts:"
-msgstr "Categoría por defecto para mensajes enviados:"
+msgstr "Numatyta kategorija pateikimui įrašų:"
 
 #: .\views/ucan-admin-options-form.php:57
 msgid "(Default = Uncategorized)"
-msgstr "(Por defecto = hasta)"
+msgstr "(Numatytas = Be kategorijos)"
 
 #: .\views/ucan-admin-options-form.php:62
 msgid "Set the Post Author to the name of the User who submitted it:"
-msgstr "Ajuste el Autor de la entrada al nombre del usuario que lo envía:"
+msgstr "Nustatyt Įrašo Autoriaus vardą, vartotojo kuris  pateikė:"
 
 #: .\views/ucan-admin-options-form.php:70
 #, fuzzy
 msgid "Allow users to edit their own posts:"
-msgstr "Permitir remitente para entrar en las etiquetas mensaje:"
+msgstr "Leisti pateikėjui vesti žymes:"
 
 #: .\views/ucan-admin-options-form.php:71
 msgid "Above option must be enabled for this to work"
@@ -111,67 +111,67 @@ msgstr ""
 
 #: .\views/ucan-admin-options-form.php:80
 msgid "Default Author for submitted posts:"
-msgstr "Predeterminado Autor de mensajes enviados:"
+msgstr "Numatytas Autorius pateikime įrašų:"
 
 #: .\views/ucan-admin-options-form.php:81
 msgid "If the above option is selected this option will only be used for guest submissions"
-msgstr "Si la opción anterior se selecciona esta opción sólo se utilizará para la presentación de resultados"
+msgstr "Jei aukščiau pasirinksite tai, bus naudojama tik svečių pateikimai."
 
 #: .\views/ucan-admin-options-form.php:93
 msgid "(Default = admin)"
-msgstr "(Por defecto = admin)"
+msgstr "(Numatytas = admin)"
 
 #: .\views/ucan-admin-options-form.php:98
 msgid "Allow submitter to enter post tags:"
-msgstr "Permitir remitente para entrar en las etiquetas mensaje:"
+msgstr "Leisti pateikėjui vesti žymes:"
 
 #: .\views/ucan-admin-options-form.php:106
 msgid "Default tags to use for submissions:"
-msgstr "etiquetas por defecto a utilizar para las presentaciones:"
+msgstr "Numatytos žymos pateikimui"
 
 #: .\views/ucan-admin-options-form.php:107
 msgid "Use a comma separated list (EX: pizza, rice, olives, ...)"
-msgstr "Use una lista separada por comas (Por ejemplo: pizza, arroz, aceitunas, ...)"
+msgstr "Naudokite kablelius atskirdami sąrašą (pvz: pica, kompiuteris, wordpress, ...)"
 
 #: .\views/ucan-admin-options-form.php:111
 msgid "(Default = None)"
-msgstr "(Por defecto = None)"
+msgstr "(Numatytas = Nėra)"
 
 #: .\views/ucan-admin-options-form.php:116
 msgid "Allow submitter to create a post excerpt:"
-msgstr "Permitir remitente para crear un extracto del anuncio:"
+msgstr "Leisti pateikėjui sukurti įrašo ištrauką:"
 
 #: .\views/ucan-admin-options-form.php:124
 msgid "Allow comments on submitted posts:"
-msgstr "Permitir comentarios en mensajes enviados:"
+msgstr "Leisti komentuoti pateiktus įrašus:"
 
 #: .\views/ucan-admin-options-form.php:132
 msgid "Allow Trackbacks/Pingbacks on submitted posts:"
-msgstr "Permitir Trackbacks / Pingbacks de mensajes enviados:"
+msgstr "Leistis \"Trackbacks/Pingbacks\" įraše"
 
 #: .\views/ucan-admin-options-form.php:140
 msgid "Moderate new posts:"
-msgstr "Moderado nuevos puestos:"
+msgstr "Moderuoti naujus įrašus"
 
 #: .\views/ucan-admin-options-form.php:148
 msgid "Allow uploads on sumbission:"
-msgstr "Permita que los archivos subidos en sumbission:"
+msgstr "Leisti atsiuntimus pateikime:"
 
 #: .\views/ucan-admin-options-form.php:149
 msgid "NOTE: For security reasons, only registered members can upload files"
-msgstr "NOTA: Por razones de seguridad, sólo los miembros registrados pueden subir archivos"
+msgstr "Užrašas: Dėl apsaugos priežasčių, gali atsiųsti failus tik užsiregistravę vartotojai."
 
 #: .\views/ucan-admin-options-form.php:158
 msgid "Show CAPTCHA image:"
-msgstr "Mostrar Imagen de seguridad:"
+msgstr "Rodyti \"Captcha\" paveiksliuką:"
 
 #: .\views/ucan-admin-options-form.php:159
 msgid "If you are allowing guests to post, it is recommended that you enable this"
-msgstr "Si se permite a los huéspedes de correos, se recomienda que habilite esta"
+msgstr "Jeigu leidžiate svečiams pateikti, rekomenduojame įjungti tai."
 
 #: .\views/ucan-admin-options-form.php:168
 msgid "Recieve an Email when a new post is submitted:"
-msgstr "Reciba un correo electrónico cuando un nuevo puesto se presenta:"
+msgstr "Gaukite elektroniniu paštu, kai ateina naujas pateikimas."
 
 #: .\views/ucan-admin-options-form.php:176
 msgid "Email User When Their Submission Is Approved:"
@@ -183,66 +183,64 @@ msgstr ""
 
 #: .\views/ucan-admin-options-form.php:188
 msgid "Save Options"
-msgstr "Opciones para guardar"
+msgstr "Išsaugoti Nustatymus"
 
 #: .\views/ucan-admin-options-form.php:195
 msgid "uCan Post -- Setup Instructions"
-msgstr "uCan Post - Instrucciones de instalación"
+msgstr "Ucan Post - Sąrankos Instrukcija"
 
 #: .\views/ucan-admin-options-form.php:198
 msgid "Create a new page (this is the page where your users will submit posts from)"
-msgstr "Crear una página nueva (esta es la página donde los usuarios van a presentar los mensajes de)"
+msgstr "Kuriant naują puslapį (tai yra puslapis, kuriame bus pateikimo formos)"
 
 #: .\views/ucan-admin-options-form.php:199
 msgid "Paste"
-msgstr "Pegar"
+msgstr "Įklijuoti"
 
 #: .\views/ucan-admin-options-form.php:199
 msgid "under the HTML tab of the page editor"
-msgstr "en la pestaña HTML del editor de la página"
+msgstr "Pagal HTML lentelę į puslapio redagtorių"
 
 #: .\views/ucan-admin-options-form.php:200
 msgid "Publish the page"
-msgstr "Publicar la página"
+msgstr "Publikuoti puslapį"
 
 #: .\views/ucan-admin-options-form.php:201
 msgid "Setup your admin settings the way you wish and save"
-msgstr "Configurar su configuración de administrador de la forma que desee y guardar"
+msgstr "Nustatykite savo administratoriaus nustatymus, norėdami išsaugoti"
 
 #: .\views/ucan-admin-options-form.php:202
 msgid "Done! Pretty easy eh?"
-msgstr "¡Ya está! Muy fácil ¿eh?"
+msgstr "Baigta! Gana lengva?"
 
 #: .\views/ucan-admin-options-saved.php:1
 msgid "Options successfully saved"
-msgstr "Opciones de guardado con éxito"
+msgstr "Nustatymai sėkmingai išsaugoti"
 
 #: .\views/ucan-admin-post-published.php:1
 #, fuzzy
 msgid "The post was successfully published!"
-msgstr "Opciones de guardado con éxito"
+msgstr "Nustatymai sėkmingai išsaugoti"
 
 #: .\views/ucan-admin-submissions-page.php:2
-#, fuzzy
 msgid "uCan Post -- Submissions"
-msgstr "uCan Post - Administrador de Opciones"
+msgstr "Ucan Post - Pateikimai"
 
 #: .\views/ucan-admin-submissions-page.php:7
-#, fuzzy
 msgid "Submissions"
-msgstr "Ver mi comunicación"
+msgstr "Pateikimai"
 
 #: .\views/ucan-admin-submissions-page.php:8
 msgid "Submitter Name"
-msgstr ""
+msgstr "Pateikėjo Vardas"
 
 #: .\views/ucan-admin-submissions-page.php:9
 msgid "Submitter Email"
-msgstr ""
+msgstr "Pateikėjo El.Paštas"
 
 #: .\views/ucan-admin-submissions-page.php:10
 msgid "Type"
-msgstr ""
+msgstr "Tipas"
 
 #: .\views/ucan-admin-submissions-page.php:28
 msgid "View"
@@ -251,21 +249,21 @@ msgstr ""
 #: .\views/ucan-admin-submissions-page.php:29
 #, fuzzy
 msgid "Edit"
-msgstr "Editor"
+msgstr "Redaktorius"
 
 #: .\views/ucan-admin-submissions-page.php:32
 #: .\views/ucan-submission-form.php:126
 msgid "Publish"
-msgstr "Publicar"
+msgstr "Pateikti"
 
 #: .\views/ucan-admin-submissions-page.php:47
 msgid "No submissions have been made"
-msgstr ""
+msgstr "Nepadaryta jokių pateikimų"
 
 #: .\views/ucan-edit-post-form.php:6
 #: .\views/ucan-submission-form.php:27
 msgid "Post Title"
-msgstr "Post Título"
+msgstr "Įrašo Pavadinimas"
 
 #: .\views/ucan-edit-post-form.php:7
 #: .\views/ucan-edit-post-form.php:29
@@ -273,22 +271,22 @@ msgstr "Post Título"
 #: .\views/ucan-submission-form.php:50
 #: .\views/ucan-submission-form.php:110
 msgid "(required)"
-msgstr "(Requerido)"
+msgstr "(reikalinga)"
 
 #: .\views/ucan-edit-post-form.php:18
 #: .\views/ucan-submission-form.php:39
 msgid "Post Excerpt"
-msgstr "Extracto de Correos"
+msgstr "Įrašo Ištrauka"
 
 #: .\views/ucan-edit-post-form.php:28
 #: .\views/ucan-submission-form.php:49
 msgid "Post Content"
-msgstr "Publicar contenido"
+msgstr "Įrašo Turinys"
 
 #: .\views/ucan-edit-post-form.php:43
 #, fuzzy
 msgid "Click Update below to submit your changes"
-msgstr "Haga clic en Publicar abajo para enviar su mensaje"
+msgstr "Paspauskite Paskelbti žemiau pateikimui įrašo"
 
 #: .\views/ucan-edit-post-form.php:47
 msgid "Update"
@@ -296,79 +294,79 @@ msgstr ""
 
 #: .\views/ucan-preview.php:3
 msgid "Post Preview Area"
-msgstr "Mensaje área de vista previa"
+msgstr "Įrašų Peržiūrimo Vieta"
 
 #: .\views/ucan-preview.php:4
 msgid "You can continue editing below the preview area"
-msgstr "Puede continuar con la edición bajo el área de vista previa"
+msgstr "Jūs galite tęsti redagavimą žemiau peržiūrų vietoje"
 
 #: .\views/ucan-publish.php:3
 msgid "Congratulations, your post was submitted successfully!"
-msgstr "Felicitaciones, su mensaje se ha enviado correctamente!"
+msgstr "Sveikiname, jūsų įrašas buvo pateiktas sėkmingai!"
 
 #: .\views/ucan-publish.php:13
 msgid "Your post is awaiting moderation and should be available soon."
-msgstr "Su mensaje está en espera de moderación y debería estar disponible pronto."
+msgstr "Jūsų įrašas laukia moderatoriaus peržiūros ir jeigu atitiks standartus bus puslapyje."
 
 #: .\views/ucan-publish.php:19
 msgid "View My Submission"
-msgstr "Ver mi comunicación"
+msgstr "Žiūrėti Mano Pateikimus"
 
 #: .\views/ucan-publish.php:23
 #: .\views/ucan-updated-post.php:12
 msgid "What would you like to do next?"
-msgstr "¿Qué te gustaría hacer ahora?"
+msgstr "Ką norėtumėte daryti toliau?"
 
 #: .\views/ucan-publish.php:24
 #: .\views/ucan-updated-post.php:13
 msgid "Visit Home Page"
-msgstr "Visitar la página de Inicio"
+msgstr "Pamatyti Pagrindinį Puslapį"
 
 #: .\views/ucan-publish.php:24
 msgid "Create Another Post"
-msgstr "Crear otro mensaje"
+msgstr "Kurti Kitą Įrašą"
 
 #: .\views/ucan-submission-form.php:10
 msgid "Name"
-msgstr ""
+msgstr "Vardas"
 
 #: .\views/ucan-submission-form.php:11
 #: .\views/ucan-submission-form.php:17
 msgid "(required - not shown publically)"
-msgstr ""
+msgstr "(reikalinga - neviešinama)"
 
 #: .\views/ucan-submission-form.php:16
 msgid "Email"
-msgstr ""
+msgstr "El.paštas"
 
 #: .\views/ucan-submission-form.php:68
 msgid "Post Category"
-msgstr "Categoría del puesto"
+msgstr "Įrašo Kategorija"
 
 #: .\views/ucan-submission-form.php:90
 msgid "Post Tags"
-msgstr "Post Tags"
+msgstr "Įrašo žymos"
 
 #: .\views/ucan-submission-form.php:91
 msgid "(separate tags by comma)"
-msgstr "(Etiquetas separadas por comas)"
+msgstr "(atskirti žymas kableliais)"
 
 #: .\views/ucan-submission-form.php:109
 msgid "Image Verification"
-msgstr "Imagen de Verificación"
+msgstr "Paveiksliukas Patvirtinimui"
 
 #: .\views/ucan-submission-form.php:122
 msgid "Click Publish below to submit your post"
-msgstr "Haga clic en Publicar abajo para enviar su mensaje"
+msgstr "Paspauskite Paskelbti žemiau pateikimui įrašo"
 
 #: .\views/ucan-unknown-error.php:1
 msgid "A fatal, unknown error has occured!"
-msgstr "Un error grave, desconocido ha ocurrido!"
+msgstr "Katostrofa , įvyko nežinoma klaida!"
 
 #: .\views/ucan-updated-post.php:3
 #, fuzzy
 msgid "Congratulations, your post was successfully updated"
-msgstr "Felicitaciones, su mensaje se ha enviado correctamente!"
+msgstr "Sveikiname, jūsų įrašas buvo pateiktas sėkmingai!"
 
 #: .\views/ucan-updated-post.php:8
 msgid "View The Post"
@@ -377,25 +375,25 @@ msgstr ""
 #: .\views/ucan-updated-post.php:13
 #, fuzzy
 msgid "Create A New Post"
-msgstr "Crear otro mensaje"
+msgstr "Kurti Kitą Įrašą"
 
 #: .\views/ucan-upload-buttons.php:2
 msgid "Upload/Insert"
-msgstr "Subir / Insertar"
+msgstr "Atsiųsti/Įterpti"
 
 #: .\views/ucan-upload-buttons.php:2
 msgid "Add an Image"
-msgstr "Añadir una imagen"
+msgstr "Pridėti Nuotrauką"
 
 #: .\views/ucan-upload-buttons.php:2
 msgid "Add Video"
-msgstr "Añadir vídeo"
+msgstr "Pridėti Vaizdo Įrašą"
 
 #: .\views/ucan-upload-buttons.php:2
 msgid "Add Audio"
-msgstr "Añadir Audio"
+msgstr "Pridėti Dainą"
 
 #: .\views/ucan-upload-buttons.php:2
 msgid "Add Media"
-msgstr "Añadir los medios de comunicación"
+msgstr "Pridėti Media"
 

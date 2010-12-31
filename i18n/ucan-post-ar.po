@@ -5,57 +5,59 @@ msgstr ""
 "POT-Creation-Date: 2010-12-31 10:33-0700\n"
 "PO-Revision-Date: 2010-12-31 10:35-0700\n"
 "Last-Translator: Paul <cartpauj@yahoo.com>\n"
-"Language-Team: cartpauj\n"
+"Language-Team: anasblog.me <anas1982@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Arabic\n"
+"X-Poedit-Country: PALESTINIAN TERRITORY, OCCUPIED\n"
 "X-Poedit-SearchPath-0: .\\views\n"
 
 #: .\views/ucan-admin-options-form.php:2
 msgid "uCan Post -- Admin Options"
-msgstr "uCan Post - Administrador de Opciones"
+msgstr "uCan Post -- لوحة التحكم"
 
 #: .\views/ucan-admin-options-form.php:7
 msgid "Setting"
-msgstr "Marco"
+msgstr "الاعدادات"
 
 #: .\views/ucan-admin-options-form.php:8
 msgid "Value"
-msgstr "Valor"
+msgstr "القيمة"
 
 #: .\views/ucan-admin-options-form.php:13
 msgid "User Level required to create posts:"
-msgstr "Nivel de usuario necesarios para crear mensajes:"
+msgstr "تصاريح العضو المسموح له بارسال موضوع : "
 
 #: .\views/ucan-admin-options-form.php:16
 msgid "Guest"
-msgstr "Habitación"
+msgstr "ضيف "
 
 #: .\views/ucan-admin-options-form.php:17
 msgid "Subscriber"
-msgstr "Suscriptor"
+msgstr "مشترك "
 
 #: .\views/ucan-admin-options-form.php:18
 msgid "Contributor"
-msgstr "Colaborador"
+msgstr "مساهم "
 
 #: .\views/ucan-admin-options-form.php:19
 msgid "Author"
-msgstr "Autor"
+msgstr "مؤلف "
 
 #: .\views/ucan-admin-options-form.php:20
 msgid "Editor"
-msgstr "Editor"
+msgstr "محرر "
 
 #: .\views/ucan-admin-options-form.php:21
 msgid "Administrator"
-msgstr "Administrador"
+msgstr "مدير "
 
 #: .\views/ucan-admin-options-form.php:23
 msgid "(Default = Subscriber)"
-msgstr "(Por defecto suscriptor =)"
+msgstr "(الافتراضي=مشترك)"
 
 #: .\views/ucan-admin-options-form.php:28
 msgid "Use WYSIWYG Editor:"
@@ -73,11 +75,11 @@ msgstr ""
 #: .\views/ucan-admin-options-form.php:153
 #: .\views/ucan-admin-options-form.php:171
 msgid "(Default = True)"
-msgstr "(Por defecto = verdadero)"
+msgstr "(الافتراضي=نعم)"
 
 #: .\views/ucan-admin-options-form.php:38
 msgid "Allow submitter to select the post category:"
-msgstr "Permitir remitente para seleccionar la categoría post:"
+msgstr "اسمح للناشر بتحديد التصنيف "
 
 #: .\views/ucan-admin-options-form.php:41
 #: .\views/ucan-admin-options-form.php:75
@@ -86,24 +88,24 @@ msgstr "Permitir remitente para seleccionar la categoría post:"
 #: .\views/ucan-admin-options-form.php:163
 #: .\views/ucan-admin-options-form.php:181
 msgid "(Default = False)"
-msgstr "(Default = false)"
+msgstr "(الافتراضي=لا)"
 
 #: .\views/ucan-admin-options-form.php:46
 msgid "Default Category for submitted posts:"
-msgstr "Categoría por defecto para mensajes enviados:"
+msgstr "التصنيف الافتراضي للموضوعات المنشورة : "
 
 #: .\views/ucan-admin-options-form.php:57
 msgid "(Default = Uncategorized)"
-msgstr "(Por defecto = hasta)"
+msgstr "(الافتراضي=غير مصنف)"
 
 #: .\views/ucan-admin-options-form.php:62
 msgid "Set the Post Author to the name of the User who submitted it:"
-msgstr "Ajuste el Autor de la entrada al nombre del usuario que lo envía:"
+msgstr "حدد اسم مؤلف الموضوع حسب اسم الناشر : "
 
 #: .\views/ucan-admin-options-form.php:70
 #, fuzzy
 msgid "Allow users to edit their own posts:"
-msgstr "Permitir remitente para entrar en las etiquetas mensaje:"
+msgstr "اسمح للناشرين باختيار الوسوم : "
 
 #: .\views/ucan-admin-options-form.php:71
 msgid "Above option must be enabled for this to work"
@@ -111,67 +113,67 @@ msgstr ""
 
 #: .\views/ucan-admin-options-form.php:80
 msgid "Default Author for submitted posts:"
-msgstr "Predeterminado Autor de mensajes enviados:"
+msgstr "المؤلف الافتراضي للموضوعات المنشورة : "
 
 #: .\views/ucan-admin-options-form.php:81
 msgid "If the above option is selected this option will only be used for guest submissions"
-msgstr "Si la opción anterior se selecciona esta opción sólo se utilizará para la presentación de resultados"
+msgstr "اذا تم تحديد هذا الخيار فسيستخدم فقط لاضافات الضيوف "
 
 #: .\views/ucan-admin-options-form.php:93
 msgid "(Default = admin)"
-msgstr "(Por defecto = admin)"
+msgstr "(الافتراضي=المدير)"
 
 #: .\views/ucan-admin-options-form.php:98
 msgid "Allow submitter to enter post tags:"
-msgstr "Permitir remitente para entrar en las etiquetas mensaje:"
+msgstr "اسمح للناشرين باختيار الوسوم : "
 
 #: .\views/ucan-admin-options-form.php:106
 msgid "Default tags to use for submissions:"
-msgstr "etiquetas por defecto a utilizar para las presentaciones:"
+msgstr "الوسوم الافتراضية لاستخدامها عند النشر : "
 
 #: .\views/ucan-admin-options-form.php:107
 msgid "Use a comma separated list (EX: pizza, rice, olives, ...)"
-msgstr "Use una lista separada por comas (Por ejemplo: pizza, arroz, aceitunas, ...)"
+msgstr "استخدم الفاغصلة بين الوسوم ( انس,مدونة,تصميم)"
 
 #: .\views/ucan-admin-options-form.php:111
 msgid "(Default = None)"
-msgstr "(Por defecto = None)"
+msgstr "(الافتراضي=فارغ)"
 
 #: .\views/ucan-admin-options-form.php:116
 msgid "Allow submitter to create a post excerpt:"
-msgstr "Permitir remitente para crear un extracto del anuncio:"
+msgstr "اسمح للناشرين بكتابة ملخص : "
 
 #: .\views/ucan-admin-options-form.php:124
 msgid "Allow comments on submitted posts:"
-msgstr "Permitir comentarios en mensajes enviados:"
+msgstr "اسمح بالتعليقات على الموضوعات المنشورة : "
 
 #: .\views/ucan-admin-options-form.php:132
 msgid "Allow Trackbacks/Pingbacks on submitted posts:"
-msgstr "Permitir Trackbacks / Pingbacks de mensajes enviados:"
+msgstr "اسمح بالتنبيهات - التعقيبات على المواضيع المنشورة "
 
 #: .\views/ucan-admin-options-form.php:140
 msgid "Moderate new posts:"
-msgstr "Moderado nuevos puestos:"
+msgstr "ادارة الموضوعات الجديدة : "
 
 #: .\views/ucan-admin-options-form.php:148
 msgid "Allow uploads on sumbission:"
-msgstr "Permita que los archivos subidos en sumbission:"
+msgstr "اسمح برفع الملفات عند النشر : "
 
 #: .\views/ucan-admin-options-form.php:149
 msgid "NOTE: For security reasons, only registered members can upload files"
-msgstr "NOTA: Por razones de seguridad, sólo los miembros registrados pueden subir archivos"
+msgstr "ملاحظة : لاسباب امنية ينصح بالسماح فقط للاعضاء المسجلين بالرفع "
 
 #: .\views/ucan-admin-options-form.php:158
 msgid "Show CAPTCHA image:"
-msgstr "Mostrar Imagen de seguridad:"
+msgstr "اعرض صورة الكاباتشا لمكافحة السبام : "
 
 #: .\views/ucan-admin-options-form.php:159
 msgid "If you are allowing guests to post, it is recommended that you enable this"
-msgstr "Si se permite a los huéspedes de correos, se recomienda que habilite esta"
+msgstr "اذا قمت بالسماح بالنشر للضيف فهذا الخيار مستحسن . "
 
 #: .\views/ucan-admin-options-form.php:168
 msgid "Recieve an Email when a new post is submitted:"
-msgstr "Reciba un correo electrónico cuando un nuevo puesto se presenta:"
+msgstr "استقبل ايميل في حال تم نشر موضوع جديد : "
 
 #: .\views/ucan-admin-options-form.php:176
 msgid "Email User When Their Submission Is Approved:"
@@ -183,66 +185,64 @@ msgstr ""
 
 #: .\views/ucan-admin-options-form.php:188
 msgid "Save Options"
-msgstr "Opciones para guardar"
+msgstr "احفظ الخيارات "
 
 #: .\views/ucan-admin-options-form.php:195
 msgid "uCan Post -- Setup Instructions"
-msgstr "uCan Post - Instrucciones de instalación"
+msgstr "uCan Post -- معلومات التنصيب  "
 
 #: .\views/ucan-admin-options-form.php:198
 msgid "Create a new page (this is the page where your users will submit posts from)"
-msgstr "Crear una página nueva (esta es la página donde los usuarios van a presentar los mensajes de)"
+msgstr "قم بانشاء صفحة جديدة من لوحة التحكم "
 
 #: .\views/ucan-admin-options-form.php:199
 msgid "Paste"
-msgstr "Pegar"
+msgstr "لصق"
 
 #: .\views/ucan-admin-options-form.php:199
 msgid "under the HTML tab of the page editor"
-msgstr "en la pestaña HTML del editor de la página"
+msgstr "في داخل الصفحة "
 
 #: .\views/ucan-admin-options-form.php:200
 msgid "Publish the page"
-msgstr "Publicar la página"
+msgstr "قم بنشر الصفحة "
 
 #: .\views/ucan-admin-options-form.php:201
 msgid "Setup your admin settings the way you wish and save"
-msgstr "Configurar su configuración de administrador de la forma que desee y guardar"
+msgstr "قم باعداد الاضافة من لوحة التحكم حسب ما ترغب وقم بالحفظ "
 
 #: .\views/ucan-admin-options-form.php:202
 msgid "Done! Pretty easy eh?"
-msgstr "¡Ya está! Muy fácil ¿eh?"
+msgstr "انتهى الاعداد "
 
 #: .\views/ucan-admin-options-saved.php:1
 msgid "Options successfully saved"
-msgstr "Opciones de guardado con éxito"
+msgstr "الاعدادات تم حفظها بنجاح "
 
 #: .\views/ucan-admin-post-published.php:1
 #, fuzzy
 msgid "The post was successfully published!"
-msgstr "Opciones de guardado con éxito"
+msgstr "الاعدادات تم حفظها بنجاح "
 
 #: .\views/ucan-admin-submissions-page.php:2
-#, fuzzy
 msgid "uCan Post -- Submissions"
-msgstr "uCan Post - Administrador de Opciones"
+msgstr "خيارات النشر "
 
 #: .\views/ucan-admin-submissions-page.php:7
-#, fuzzy
 msgid "Submissions"
-msgstr "Ver mi comunicación"
+msgstr "النشر "
 
 #: .\views/ucan-admin-submissions-page.php:8
 msgid "Submitter Name"
-msgstr ""
+msgstr "اسم الناشر "
 
 #: .\views/ucan-admin-submissions-page.php:9
 msgid "Submitter Email"
-msgstr ""
+msgstr "ايميل الناشر "
 
 #: .\views/ucan-admin-submissions-page.php:10
 msgid "Type"
-msgstr ""
+msgstr "النوع "
 
 #: .\views/ucan-admin-submissions-page.php:28
 msgid "View"
@@ -251,21 +251,21 @@ msgstr ""
 #: .\views/ucan-admin-submissions-page.php:29
 #, fuzzy
 msgid "Edit"
-msgstr "Editor"
+msgstr "محرر "
 
 #: .\views/ucan-admin-submissions-page.php:32
 #: .\views/ucan-submission-form.php:126
 msgid "Publish"
-msgstr "Publicar"
+msgstr "نشر الموضوع "
 
 #: .\views/ucan-admin-submissions-page.php:47
 msgid "No submissions have been made"
-msgstr ""
+msgstr "لا يوجد منشورات له "
 
 #: .\views/ucan-edit-post-form.php:6
 #: .\views/ucan-submission-form.php:27
 msgid "Post Title"
-msgstr "Post Título"
+msgstr "عنوان الموضوع "
 
 #: .\views/ucan-edit-post-form.php:7
 #: .\views/ucan-edit-post-form.php:29
@@ -273,22 +273,22 @@ msgstr "Post Título"
 #: .\views/ucan-submission-form.php:50
 #: .\views/ucan-submission-form.php:110
 msgid "(required)"
-msgstr "(Requerido)"
+msgstr "(مطلوب)"
 
 #: .\views/ucan-edit-post-form.php:18
 #: .\views/ucan-submission-form.php:39
 msgid "Post Excerpt"
-msgstr "Extracto de Correos"
+msgstr "ملخص الموضوع "
 
 #: .\views/ucan-edit-post-form.php:28
 #: .\views/ucan-submission-form.php:49
 msgid "Post Content"
-msgstr "Publicar contenido"
+msgstr "محتوى الموضوع "
 
 #: .\views/ucan-edit-post-form.php:43
 #, fuzzy
 msgid "Click Update below to submit your changes"
-msgstr "Haga clic en Publicar abajo para enviar su mensaje"
+msgstr "اضغط نشر في الاسفر لنشر موضوعك "
 
 #: .\views/ucan-edit-post-form.php:47
 msgid "Update"
@@ -296,79 +296,79 @@ msgstr ""
 
 #: .\views/ucan-preview.php:3
 msgid "Post Preview Area"
-msgstr "Mensaje área de vista previa"
+msgstr "مساحة معاينة الموضوع "
 
 #: .\views/ucan-preview.php:4
 msgid "You can continue editing below the preview area"
-msgstr "Puede continuar con la edición bajo el área de vista previa"
+msgstr "تستطيع اكمال التحرير من اسفل المعاينة "
 
 #: .\views/ucan-publish.php:3
 msgid "Congratulations, your post was submitted successfully!"
-msgstr "Felicitaciones, su mensaje se ha enviado correctamente!"
+msgstr "تهانينا , موضوعك تم نشره بنجاح ! "
 
 #: .\views/ucan-publish.php:13
 msgid "Your post is awaiting moderation and should be available soon."
-msgstr "Su mensaje está en espera de moderación y debería estar disponible pronto."
+msgstr "موضوعك ينتظر موافقة الادارة لادراجه "
 
 #: .\views/ucan-publish.php:19
 msgid "View My Submission"
-msgstr "Ver mi comunicación"
+msgstr "شاهد منشوراتي "
 
 #: .\views/ucan-publish.php:23
 #: .\views/ucan-updated-post.php:12
 msgid "What would you like to do next?"
-msgstr "¿Qué te gustaría hacer ahora?"
+msgstr "ما الذي ترغب بفعله الان ؟ "
 
 #: .\views/ucan-publish.php:24
 #: .\views/ucan-updated-post.php:13
 msgid "Visit Home Page"
-msgstr "Visitar la página de Inicio"
+msgstr "زيارة الرئيسية "
 
 #: .\views/ucan-publish.php:24
 msgid "Create Another Post"
-msgstr "Crear otro mensaje"
+msgstr "انشاء موضوع اخر "
 
 #: .\views/ucan-submission-form.php:10
 msgid "Name"
-msgstr ""
+msgstr "الاسم "
 
 #: .\views/ucan-submission-form.php:11
 #: .\views/ucan-submission-form.php:17
 msgid "(required - not shown publically)"
-msgstr ""
+msgstr "مطلوب ( لا يتم عرضه للعامة ) "
 
 #: .\views/ucan-submission-form.php:16
 msgid "Email"
-msgstr ""
+msgstr "الايميل "
 
 #: .\views/ucan-submission-form.php:68
 msgid "Post Category"
-msgstr "Categoría del puesto"
+msgstr "تصنيف الموضوع "
 
 #: .\views/ucan-submission-form.php:90
 msgid "Post Tags"
-msgstr "Post Tags"
+msgstr "وسوم الموضوع "
 
 #: .\views/ucan-submission-form.php:91
 msgid "(separate tags by comma)"
-msgstr "(Etiquetas separadas por comas)"
+msgstr "(فاصلة بين كل وسم)"
 
 #: .\views/ucan-submission-form.php:109
 msgid "Image Verification"
-msgstr "Imagen de Verificación"
+msgstr "صورة التاكيد : "
 
 #: .\views/ucan-submission-form.php:122
 msgid "Click Publish below to submit your post"
-msgstr "Haga clic en Publicar abajo para enviar su mensaje"
+msgstr "اضغط نشر في الاسفر لنشر موضوعك "
 
 #: .\views/ucan-unknown-error.php:1
 msgid "A fatal, unknown error has occured!"
-msgstr "Un error grave, desconocido ha ocurrido!"
+msgstr "خطا فادح , خطا غير معروف بالنشر ! "
 
 #: .\views/ucan-updated-post.php:3
 #, fuzzy
 msgid "Congratulations, your post was successfully updated"
-msgstr "Felicitaciones, su mensaje se ha enviado correctamente!"
+msgstr "تهانينا , موضوعك تم نشره بنجاح ! "
 
 #: .\views/ucan-updated-post.php:8
 msgid "View The Post"
@@ -377,25 +377,25 @@ msgstr ""
 #: .\views/ucan-updated-post.php:13
 #, fuzzy
 msgid "Create A New Post"
-msgstr "Crear otro mensaje"
+msgstr "انشاء موضوع اخر "
 
 #: .\views/ucan-upload-buttons.php:2
 msgid "Upload/Insert"
-msgstr "Subir / Insertar"
+msgstr "رفع - اضافة "
 
 #: .\views/ucan-upload-buttons.php:2
 msgid "Add an Image"
-msgstr "Añadir una imagen"
+msgstr "اضافة صورة "
 
 #: .\views/ucan-upload-buttons.php:2
 msgid "Add Video"
-msgstr "Añadir vídeo"
+msgstr "اضافة فيديو "
 
 #: .\views/ucan-upload-buttons.php:2
 msgid "Add Audio"
-msgstr "Añadir Audio"
+msgstr "اضافة صوت "
 
 #: .\views/ucan-upload-buttons.php:2
 msgid "Add Media"
-msgstr "Añadir los medios de comunicación"
+msgstr "اضافة ملف وسائط "
 
