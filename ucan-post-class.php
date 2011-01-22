@@ -103,7 +103,7 @@ if (!class_exists("uCanPost"))
     //Enque the scripts needed for the media uploader
     function uCan_Enqueue_Scripts()
     {
-      if($this->ucan_options['uCan_Use_WYSIWYG'])
+      if($this->ucan_options['uCan_Use_WYSIWYG'] && $this->ucan_options['uCan_Allow_Uploads'] && !$this->ucan_options['uCan_Force_JS'])
       {
         wp_enqueue_script('jquery');
         wp_enqueue_script('media-upload');
@@ -122,6 +122,8 @@ if (!class_exists("uCanPost"))
         <?php
         if($this->ucan_options['uCan_Use_WYSIWYG']) //Saves js code from being loaded when not needed - preventing more conflicts
         {
+          if($this->ucan_options['uCan_Force_JS'])
+            echo '<script type="text/javascript" src="'.$this->ucan_wp_admin_url.'load-scripts.php?c=1&amp;load=jquery,utils,thickbox,media-upload"></script>';
         ?>
           <link rel="stylesheet" id="thickbox-css"  href="<?php echo $this->ucan_wp_includes_url.'js/thickbox/thickbox.css'; ?>" type="text/css" media="all" />
           <script type="text/javascript" src="<?php echo $this->ucan_js_url.'tinymce/tiny_mce.js'; ?>" ></script>
@@ -164,9 +166,9 @@ if (!class_exists("uCanPost"))
     function uCan_Add_Admin_Page()
     {
       $this->uCan_Set_Links();
-      add_menu_page(__('uCan Post - Options', 'ucan-post'), 'uCan Post', 9, 'ucanmain', array(&$this, 'uCan_Display_Admin_Options_Page'), $this->ucan_images_url.'menu_icon.png');
-      add_submenu_page( 'ucanmain', __('uCan Post - Options', 'ucan-post'), __('Options', 'ucan-post'), 9, 'ucanmain', array(&$this, 'uCan_Display_Admin_Options_Page'));
-      add_submenu_page( 'ucanmain', __('uCan Post - Submissions', 'ucan-post'), __('Submissions', 'ucan-post'), 9, 'ucansubmissions', array(&$this, 'uCan_Display_Admin_Submissions_Page'));
+      add_menu_page(__('uCan Post - Options', 'ucan-post'), 'uCan Post', 'administrator', 'ucanmain', array(&$this, 'uCan_Display_Admin_Options_Page'), $this->ucan_images_url.'menu_icon.png');
+      add_submenu_page( 'ucanmain', __('uCan Post - Options', 'ucan-post'), __('Options', 'ucan-post'), 'administrator', 'ucanmain', array(&$this, 'uCan_Display_Admin_Options_Page'));
+      add_submenu_page( 'ucanmain', __('uCan Post - Submissions', 'ucan-post'), __('Submissions', 'ucan-post'), 'administrator', 'ucansubmissions', array(&$this, 'uCan_Display_Admin_Submissions_Page'));
     }
 
     //Sets up variables and displays the admin page
@@ -208,10 +210,13 @@ if (!class_exists("uCanPost"))
       $ucan_old_options = get_option($this->ucan_options_name); //Get any existing options
  
       $this->ucan_options = array('uCan_Post_Level'             => '0',
+                                  'uCan_Post_Type'              => 'post', /*TODO*/
                                   'uCan_Show_Categories'        => false,
                                   'uCan_Default_Category'       => 1,
+                                  'uCan_Exclude_Categories'     => '',
                                   'uCan_Allow_Author'           => true,
                                   'uCan_Allow_Author_Edits'     => false,
+                                  'uCan_Append_Guest_Name'      => true,
                                   'uCan_Default_Author'         => 1,
                                   'uCan_Allow_Tags'             => false,
                                   'uCan_Default_Tags'           => '',
@@ -223,7 +228,8 @@ if (!class_exists("uCanPost"))
                                   'uCan_Moderate_Posts'         => true,
                                   'uCan_Allow_Uploads'          => true,
                                   'uCan_Show_Captcha'           => false,
-                                  'uCan_Use_WYSIWYG'            => true
+                                  'uCan_Use_WYSIWYG'            => true,
+                                  'uCan_Force_JS'               => false
       );
 
       if(!empty($ucan_old_options))
@@ -239,11 +245,14 @@ if (!class_exists("uCanPost"))
       if(isset($_POST['ucan_save_admin_options']) && !empty($_POST['ucan_save_admin_options']))
       {
         $ucan_save_options = array( 'uCan_Post_Level'             => $_POST['ucan_post_level'],
+                                    'uCan_Post_Type'              => 'post', /*TODO*/
                                     'uCan_Show_Categories'        => $_POST['ucan_show_categories'],
                                     'uCan_Default_Category'       => $_POST['ucan_default_category'],
+                                    'uCan_Exclude_Categories'     => $_POST['ucan_exclude_categories'],
                                     'uCan_Allow_Author'           => $_POST['ucan_allow_author'],
                                     'uCan_Allow_Author_Edits'     => $_POST['ucan_allow_author_edits'],
                                     'uCan_Default_Author'         => $_POST['ucan_default_author'],
+                                    'uCan_Append_Guest_Name'      => $_POST['ucan_append_guest_name'],
                                     'uCan_Allow_Tags'             => $_POST['ucan_allow_tags'],
                                     'uCan_Default_Tags'           => $_POST['ucan_default_tags'],
                                     'uCan_Show_Excerpt'           => $_POST['ucan_show_excerpt'],
@@ -254,7 +263,8 @@ if (!class_exists("uCanPost"))
                                     'uCan_Moderate_Posts'         => $_POST['ucan_moderate_posts'],
                                     'uCan_Allow_Uploads'          => $_POST['ucan_allow_uploads'],
                                     'uCan_Show_Captcha'           => $_POST['ucan_show_captcha'],
-                                    'uCan_Use_WYSIWYG'            => $_POST['ucan_use_wysiwyg']
+                                    'uCan_Use_WYSIWYG'            => $_POST['ucan_use_wysiwyg'],
+                                    'uCan_Force_JS'              => $_POST['ucan_force_js']
         );
         update_option($this->ucan_options_name, $ucan_save_options);
         $this->uCan_Set_Admin_Options(); //Make sure new options are updated in the class instance
@@ -330,10 +340,14 @@ if (!class_exists("uCanPost"))
     {
       global $user_ID;
 
+      $append_name = "";
+      if($this->ucan_options['uCan_Append_Guest_Name'] && $this->ucan_options['uCan_Post_Level'] == 'guest' && !$user_ID)
+        $append_name = '<br/>'.__('By:', 'ucan-post').' '.stripslashes($_POST['ucan_submission_guest_name']);
+
       $ucan_new_post = array();
-      $ucan_new_post['post_type'] = 'post';
+      $ucan_new_post['post_type'] = $this->ucan_options['uCan_Post_Type']; //TODO
       $ucan_new_post['post_title'] = stripslashes($_POST['ucan_submission_title']);
-      $ucan_new_post['post_content'] = stripslashes($_POST['ucan_submission_content']);
+      $ucan_new_post['post_content'] = stripslashes($_POST['ucan_submission_content']).$append_name;
 
       if($this->ucan_options['uCan_Show_Excerpt'])
         $ucan_new_post['post_excerpt'] = stripslashes($_POST['ucan_submission_excerpt']);
@@ -502,6 +516,7 @@ if (!class_exists("uCanPost"))
     {
       global $user_level;
       $out = "";
+      $logorreg = ' <a href="'.get_option('siteurl').'/wp-login.php?action=login'.'">'.__('login', 'ucan-post').'</a> '.__('or', 'ucan-post').' <a href="'.get_option('siteurl').'/wp-login.php?action=register'.'">'.__('register', 'ucan-post').'</a>.';
       
       $this->uCan_Set_Links(); //This pretty much sets all the links/directories up
       ob_start();
@@ -529,7 +544,7 @@ if (!class_exists("uCanPost"))
             break;
         }
       else
-        echo "<p><strong>".__('You do not have permission to use this form', 'ucan-post')."</strong></p>";
+        echo "<p><strong>".__('Only registered users have permission to view this form. Please', 'ucan-post').$logorreg."</strong></p>";
         
       $out = ob_get_contents();
       ob_end_clean();
@@ -549,8 +564,9 @@ if (!class_exists("uCanPost"))
     //Get all post categories whether empty or not
     function uCan_Get_Categories()
     {
-      $args = array('type'          => 'post',
-                    'hide_empty'    => 0
+      $args = array('type'          => $this->ucan_options['uCan_Post_Type'], /*TODO*/
+                    'hide_empty'    => 0,
+                    'exclude'       => $this->ucan_options['uCan_Exclude_Categories']
       );
       return get_categories($args);
     }

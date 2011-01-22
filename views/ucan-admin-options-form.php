@@ -59,20 +59,20 @@
         </tr>
 
         <tr>
-          <td><?php echo __('Set the Post Author to the name of the User who submitted it:', 'ucan-post'); ?></td>
+          <td><?php echo __('Category ID\'s to exclude from users:', 'ucan-post'); ?><br/>
+            <small><?php echo __('Use a comma separated list of ID\'s (EX: 0, 5, 9, ...)', 'ucan-post'); ?></small>
+          </td>
           <td>
-            <input type="checkbox" name="ucan_allow_author" value="true" <?php if($this->ucan_options['uCan_Allow_Author']){echo 'checked="checked"';} ?> />
-            <em><?php echo __('(Default = True)', 'ucan-post'); ?></em>
+            <input type="text" name="ucan_exclude_categories" value="<?php echo $this->ucan_options['uCan_Exclude_Categories']; ?>" />
+            <em><?php echo __('(Default = None)', 'ucan-post'); ?></em>
           </td>
         </tr>
 
         <tr>
-          <td><?php echo __('Allow users to edit their own posts:', 'ucan-post'); ?><br/>
-            <small><?php echo __('Above option must be enabled for this to work', 'ucan-post'); ?></small>
-          </td>
+          <td><?php echo __('Set the Post Author to the name of the User who submitted it:', 'ucan-post'); ?></td>
           <td>
-            <input type="checkbox" name="ucan_allow_author_edits" value="true" <?php if($this->ucan_options['uCan_Allow_Author_Edits']){echo 'checked="checked"';} ?> />
-            <em><?php echo __('(Default = False)', 'ucan-post'); ?></em>
+            <input type="checkbox" name="ucan_allow_author" value="true" <?php if($this->ucan_options['uCan_Allow_Author']){echo 'checked="checked"';} ?> />
+            <em><?php echo __('(Default = True)', 'ucan-post'); ?></em>
           </td>
         </tr>
 
@@ -91,6 +91,26 @@
               ?>
             </select>
             <em><?php echo __('(Default = admin)', 'ucan-post'); ?></em>
+          </td>
+        </tr>
+
+        <tr>
+          <td><?php echo __('Allow users to edit their own posts:', 'ucan-post'); ?><br/>
+            <small><?php echo __('Above option must be enabled for this to work', 'ucan-post'); ?></small>
+          </td>
+          <td>
+            <input type="checkbox" name="ucan_allow_author_edits" value="true" <?php if($this->ucan_options['uCan_Allow_Author_Edits']){echo 'checked="checked"';} ?> />
+            <em><?php echo __('(Default = False)', 'ucan-post'); ?></em>
+          </td>
+        </tr>
+
+        <tr>
+          <td><?php echo __('Append Guest name to post:', 'ucan-post'); ?><br/>
+            <small><?php echo __('Adds guests name to the bottom of the submission', 'ucan-post'); ?></small>
+          </td>
+          <td>
+            <input type="checkbox" name="ucan_append_guest_name" value="true" <?php if($this->ucan_options['uCan_Append_Guest_Name']){echo 'checked="checked"';} ?> />
+            <em><?php echo __('(Default = True)', 'ucan-post'); ?></em>
           </td>
         </tr>
 
@@ -151,6 +171,16 @@
           <td>
             <input type="checkbox" name="ucan_allow_uploads" value="true" <?php if($this->ucan_options['uCan_Allow_Uploads']){echo 'checked="checked"';} ?> />
             <em><?php echo __('(Default = True)', 'ucan-post'); ?></em>
+          </td>
+        </tr>
+
+        <tr>
+          <td><?php echo __('Force uploads javascript:', 'ucan-post'); ?><br/>
+            <small><?php echo __('NOTE: Leave this off unless you have problems with the media uploader', 'ucan-post'); ?></small>
+          </td>
+          <td>
+            <input type="checkbox" name="ucan_force_js" value="true" <?php if($this->ucan_options['uCan_Force_JS']){echo 'checked="checked"';} ?> />
+            <em><?php echo __('(Default = False)', 'ucan-post'); ?></em>
           </td>
         </tr>
 
