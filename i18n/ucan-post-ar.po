@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uCan Post\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-31 10:33-0700\n"
-"PO-Revision-Date: 2010-12-31 10:35-0700\n"
+"POT-Creation-Date: 2011-01-22 00:51-0700\n"
+"PO-Revision-Date: 2011-01-22 01:03-0700\n"
 "Last-Translator: Paul <cartpauj@yahoo.com>\n"
 "Language-Team: anasblog.me <anas1982@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -68,12 +68,13 @@ msgid "Disabling the editor also disables media uploads"
 msgstr ""
 
 #: .\views/ucan-admin-options-form.php:33
-#: .\views/ucan-admin-options-form.php:65
-#: .\views/ucan-admin-options-form.php:127
-#: .\views/ucan-admin-options-form.php:135
-#: .\views/ucan-admin-options-form.php:143
-#: .\views/ucan-admin-options-form.php:153
-#: .\views/ucan-admin-options-form.php:171
+#: .\views/ucan-admin-options-form.php:75
+#: .\views/ucan-admin-options-form.php:113
+#: .\views/ucan-admin-options-form.php:147
+#: .\views/ucan-admin-options-form.php:155
+#: .\views/ucan-admin-options-form.php:163
+#: .\views/ucan-admin-options-form.php:173
+#: .\views/ucan-admin-options-form.php:201
 msgid "(Default = True)"
 msgstr "(الافتراضي=نعم)"
 
@@ -82,11 +83,12 @@ msgid "Allow submitter to select the post category:"
 msgstr "اسمح للناشر بتحديد التصنيف "
 
 #: .\views/ucan-admin-options-form.php:41
-#: .\views/ucan-admin-options-form.php:75
-#: .\views/ucan-admin-options-form.php:101
-#: .\views/ucan-admin-options-form.php:119
-#: .\views/ucan-admin-options-form.php:163
-#: .\views/ucan-admin-options-form.php:181
+#: .\views/ucan-admin-options-form.php:103
+#: .\views/ucan-admin-options-form.php:121
+#: .\views/ucan-admin-options-form.php:139
+#: .\views/ucan-admin-options-form.php:183
+#: .\views/ucan-admin-options-form.php:193
+#: .\views/ucan-admin-options-form.php:211
 msgid "(Default = False)"
 msgstr "(الافتراضي=لا)"
 
@@ -99,17 +101,22 @@ msgid "(Default = Uncategorized)"
 msgstr "(الافتراضي=غير مصنف)"
 
 #: .\views/ucan-admin-options-form.php:62
+msgid "Category ID's to exclude from users:"
+msgstr ""
+
+#: .\views/ucan-admin-options-form.php:63
+#, fuzzy
+msgid "Use a comma separated list of ID's (EX: 0, 5, 9, ...)"
+msgstr "استخدم الفاغصلة بين الوسوم ( انس,مدونة,تصميم)"
+
+#: .\views/ucan-admin-options-form.php:67
+#: .\views/ucan-admin-options-form.php:131
+msgid "(Default = None)"
+msgstr "(الافتراضي=فارغ)"
+
+#: .\views/ucan-admin-options-form.php:72
 msgid "Set the Post Author to the name of the User who submitted it:"
 msgstr "حدد اسم مؤلف الموضوع حسب اسم الناشر : "
-
-#: .\views/ucan-admin-options-form.php:70
-#, fuzzy
-msgid "Allow users to edit their own posts:"
-msgstr "اسمح للناشرين باختيار الوسوم : "
-
-#: .\views/ucan-admin-options-form.php:71
-msgid "Above option must be enabled for this to work"
-msgstr ""
 
 #: .\views/ucan-admin-options-form.php:80
 msgid "Default Author for submitted posts:"
@@ -124,94 +131,115 @@ msgid "(Default = admin)"
 msgstr "(الافتراضي=المدير)"
 
 #: .\views/ucan-admin-options-form.php:98
+#, fuzzy
+msgid "Allow users to edit their own posts:"
+msgstr "اسمح للناشرين باختيار الوسوم : "
+
+#: .\views/ucan-admin-options-form.php:99
+msgid "Above option must be enabled for this to work"
+msgstr ""
+
+#: .\views/ucan-admin-options-form.php:108
+msgid "Append Guest name to post:"
+msgstr ""
+
+#: .\views/ucan-admin-options-form.php:109
+msgid "Adds guests name to the bottom of the submission"
+msgstr ""
+
+#: .\views/ucan-admin-options-form.php:118
 msgid "Allow submitter to enter post tags:"
 msgstr "اسمح للناشرين باختيار الوسوم : "
 
-#: .\views/ucan-admin-options-form.php:106
+#: .\views/ucan-admin-options-form.php:126
 msgid "Default tags to use for submissions:"
 msgstr "الوسوم الافتراضية لاستخدامها عند النشر : "
 
-#: .\views/ucan-admin-options-form.php:107
+#: .\views/ucan-admin-options-form.php:127
 msgid "Use a comma separated list (EX: pizza, rice, olives, ...)"
 msgstr "استخدم الفاغصلة بين الوسوم ( انس,مدونة,تصميم)"
 
-#: .\views/ucan-admin-options-form.php:111
-msgid "(Default = None)"
-msgstr "(الافتراضي=فارغ)"
-
-#: .\views/ucan-admin-options-form.php:116
+#: .\views/ucan-admin-options-form.php:136
 msgid "Allow submitter to create a post excerpt:"
 msgstr "اسمح للناشرين بكتابة ملخص : "
 
-#: .\views/ucan-admin-options-form.php:124
+#: .\views/ucan-admin-options-form.php:144
 msgid "Allow comments on submitted posts:"
 msgstr "اسمح بالتعليقات على الموضوعات المنشورة : "
 
-#: .\views/ucan-admin-options-form.php:132
+#: .\views/ucan-admin-options-form.php:152
 msgid "Allow Trackbacks/Pingbacks on submitted posts:"
 msgstr "اسمح بالتنبيهات - التعقيبات على المواضيع المنشورة "
 
-#: .\views/ucan-admin-options-form.php:140
+#: .\views/ucan-admin-options-form.php:160
 msgid "Moderate new posts:"
 msgstr "ادارة الموضوعات الجديدة : "
 
-#: .\views/ucan-admin-options-form.php:148
+#: .\views/ucan-admin-options-form.php:168
 msgid "Allow uploads on sumbission:"
 msgstr "اسمح برفع الملفات عند النشر : "
 
-#: .\views/ucan-admin-options-form.php:149
+#: .\views/ucan-admin-options-form.php:169
 msgid "NOTE: For security reasons, only registered members can upload files"
 msgstr "ملاحظة : لاسباب امنية ينصح بالسماح فقط للاعضاء المسجلين بالرفع "
 
-#: .\views/ucan-admin-options-form.php:158
-msgid "Show CAPTCHA image:"
-msgstr "اعرض صورة الكاباتشا لمكافحة السبام : "
-
-#: .\views/ucan-admin-options-form.php:159
-msgid "If you are allowing guests to post, it is recommended that you enable this"
-msgstr "اذا قمت بالسماح بالنشر للضيف فهذا الخيار مستحسن . "
-
-#: .\views/ucan-admin-options-form.php:168
-msgid "Recieve an Email when a new post is submitted:"
-msgstr "استقبل ايميل في حال تم نشر موضوع جديد : "
-
-#: .\views/ucan-admin-options-form.php:176
-msgid "Email User When Their Submission Is Approved:"
+#: .\views/ucan-admin-options-form.php:178
+msgid "Force uploads javascript:"
 msgstr ""
 
-#: .\views/ucan-admin-options-form.php:177
-msgid "For this to work you must approve the post through the submissions area of this plugin"
+#: .\views/ucan-admin-options-form.php:179
+msgid "NOTE: Leave this off unless you have problems with the media uploader"
 msgstr ""
 
 #: .\views/ucan-admin-options-form.php:188
+msgid "Show CAPTCHA image:"
+msgstr "اعرض صورة الكاباتشا لمكافحة السبام : "
+
+#: .\views/ucan-admin-options-form.php:189
+msgid "If you are allowing guests to post, it is recommended that you enable this"
+msgstr "اذا قمت بالسماح بالنشر للضيف فهذا الخيار مستحسن . "
+
+#: .\views/ucan-admin-options-form.php:198
+msgid "Recieve an Email when a new post is submitted:"
+msgstr "استقبل ايميل في حال تم نشر موضوع جديد : "
+
+#: .\views/ucan-admin-options-form.php:206
+msgid "Email User When Their Submission Is Approved:"
+msgstr ""
+
+#: .\views/ucan-admin-options-form.php:207
+msgid "For this to work you must approve the post through the submissions area of this plugin"
+msgstr ""
+
+#: .\views/ucan-admin-options-form.php:218
 msgid "Save Options"
 msgstr "احفظ الخيارات "
 
-#: .\views/ucan-admin-options-form.php:195
+#: .\views/ucan-admin-options-form.php:225
 msgid "uCan Post -- Setup Instructions"
 msgstr "uCan Post -- معلومات التنصيب  "
 
-#: .\views/ucan-admin-options-form.php:198
+#: .\views/ucan-admin-options-form.php:228
 msgid "Create a new page (this is the page where your users will submit posts from)"
 msgstr "قم بانشاء صفحة جديدة من لوحة التحكم "
 
-#: .\views/ucan-admin-options-form.php:199
+#: .\views/ucan-admin-options-form.php:229
 msgid "Paste"
 msgstr "لصق"
 
-#: .\views/ucan-admin-options-form.php:199
+#: .\views/ucan-admin-options-form.php:229
 msgid "under the HTML tab of the page editor"
 msgstr "في داخل الصفحة "
 
-#: .\views/ucan-admin-options-form.php:200
+#: .\views/ucan-admin-options-form.php:230
 msgid "Publish the page"
 msgstr "قم بنشر الصفحة "
 
-#: .\views/ucan-admin-options-form.php:201
+#: .\views/ucan-admin-options-form.php:231
 msgid "Setup your admin settings the way you wish and save"
 msgstr "قم باعداد الاضافة من لوحة التحكم حسب ما ترغب وقم بالحفظ "
 
-#: .\views/ucan-admin-options-form.php:202
+#: .\views/ucan-admin-options-form.php:232
 msgid "Done! Pretty easy eh?"
 msgstr "انتهى الاعداد "
 
@@ -229,6 +257,7 @@ msgid "uCan Post -- Submissions"
 msgstr "خيارات النشر "
 
 #: .\views/ucan-admin-submissions-page.php:7
+#: ucan-post-class.php:171
 msgid "Submissions"
 msgstr "النشر "
 
@@ -398,4 +427,90 @@ msgstr "اضافة صوت "
 #: .\views/ucan-upload-buttons.php:2
 msgid "Add Media"
 msgstr "اضافة ملف وسائط "
+
+#: ucan-post-class.php:169
+#: ucan-post-class.php:170
+#, fuzzy
+msgid "uCan Post - Options"
+msgstr "uCan Post -- لوحة التحكم"
+
+#: ucan-post-class.php:170
+#, fuzzy
+msgid "Options"
+msgstr "احفظ الخيارات "
+
+#: ucan-post-class.php:171
+#, fuzzy
+msgid "uCan Post - Submissions"
+msgstr "خيارات النشر "
+
+#: ucan-post-class.php:291
+msgid "You must enter a title!"
+msgstr ""
+
+#: ucan-post-class.php:293
+msgid "You must enter some content!"
+msgstr ""
+
+#: ucan-post-class.php:296
+#, fuzzy
+msgid "Image verification did not match!"
+msgstr "صورة التاكيد : "
+
+#: ucan-post-class.php:298
+msgid "You must enter your name!"
+msgstr ""
+
+#: ucan-post-class.php:300
+msgid "You must enter a valid email address!"
+msgstr ""
+
+#: ucan-post-class.php:345
+msgid "By:"
+msgstr ""
+
+#: ucan-post-class.php:472
+#, fuzzy
+msgid "Edit your submission"
+msgstr "شاهد منشوراتي "
+
+#: ucan-post-class.php:519
+msgid "login"
+msgstr ""
+
+#: ucan-post-class.php:519
+msgid "or"
+msgstr ""
+
+#: ucan-post-class.php:519
+msgid "register"
+msgstr ""
+
+#: ucan-post-class.php:547
+msgid "Only registered users have permission to view this form. Please"
+msgstr ""
+
+#: ucan-post-class.php:584
+msgid "A new post has been submitted on your site. Follow the link below to view it. Do not forget to Publish the post if you are moderating new submissions."
+msgstr ""
+
+#: ucan-post-class.php:584
+#: ucan-post-class.php:601
+#, fuzzy
+msgid "View Submission"
+msgstr "شاهد منشوراتي "
+
+#: ucan-post-class.php:586
+#, fuzzy
+msgid "New Post Submission"
+msgstr "شاهد منشوراتي "
+
+#: ucan-post-class.php:601
+msgid "Your post was published. Follow the link below to view it."
+msgstr ""
+
+#: ucan-post-class.php:603
+#, fuzzy
+msgid "Post Published"
+msgstr "نشر الموضوع "
 

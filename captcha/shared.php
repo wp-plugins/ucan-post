@@ -34,7 +34,7 @@
 // ------------------------------------------------------------------------------
 
 function ucan_get_cartpauj_url() {
-  return "http://cartpauj.com/sevensixsix";
+  return "http://cartpauj.com/sexymama";
 }
 
 function ucan_str_encrypt($str) { 

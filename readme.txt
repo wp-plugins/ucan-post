@@ -4,7 +4,7 @@ Donate link: http://cartpauj.com/donate/
 Tags: ucan post, user posting, user posts, users, post, posts, blog posts, blog, blog content, add posts, users add posts, posting form, form, posting, cartpauj
 Requires at least: 2.8.6
 Tested up to: 3.1
-Stable tag: 1.0.07
+Stable tag: 1.0.08
 
 The easiest way to allow your users, and even guests, to create posts/content from a page on your WordPress-based site.
 
@@ -21,6 +21,7 @@ You can try uCan Post out on my site:
 = Features =
 * Works through a Page rather than the dashboard. This is very helpful if you want to keep your users out of the Dashboard area!
 * Allow guests to post
+* Append guests names to post
 * Allow media uploads
 * Set default category, author, and tags or let your users choose them
 * CAPTCHA protection
@@ -39,7 +40,9 @@ You can try uCan Post out on my site:
 * Arabic (ar)
 * Bulgarian (bg_BG)
 * Chinese (zh_CN)
+* Dutch (nl_NL)
 * German (de_DE)
+* Italian (it_IT)
 * Lithuanian (lt_LT)
 * Polish (pl_PL)
 * Portuguese (pt_BR)
@@ -69,6 +72,15 @@ n/a
 n/a
 
 == Changelog ==
+= 1.0.08 =
+* Added option to exclude categories
+* Added option to append guest submitters name to the submission
+* Added option to Force media uploads javascript to load
+* Added login/register links to page when guests do not have access to form
+* Fixed insignificant js issue
+* Updated some localazation strings
+* Added Dutch Translation (Big thanks to Joplin)
+* Added Italian Translation (Big thanks to Roberta)
 = 1.0.07 =
 * Added option to allow registered users to edit their own posts
 * Added option to email users when their post is published
