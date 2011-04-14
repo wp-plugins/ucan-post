@@ -8,13 +8,13 @@
   ?>
       <label>
         <?php echo __('Name', 'ucan-post'); ?>:
-        <span class="small"><?php echo __('(required - not shown publically)', 'ucan-post'); ?></span>
+        <span class="small"><?php echo __('(required - not shown publicly)', 'ucan-post'); ?></span>
       </label>
       <input type="text" name="ucan_submission_guest_name" value="<?php echo stripslashes($_POST['ucan_submission_guest_name']); ?>" />
 
       <label>
         <?php echo __('Email', 'ucan-post'); ?>:
-        <span class="small"><?php echo __('(required - not shown publically)', 'ucan-post'); ?></span>
+        <span class="small"><?php echo __('(required - not shown publicly)', 'ucan-post'); ?></span>
       </label>
       <input type="text" name="ucan_submission_guest_email" value="<?php echo stripslashes($_POST['ucan_submission_guest_email']); ?>" />
   <?php
