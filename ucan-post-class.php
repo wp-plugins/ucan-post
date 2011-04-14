@@ -67,6 +67,7 @@ if (!class_exists("uCanPost"))
       $role->add_cap('upload_files');
       $role = get_role('subscriber');
       $role->add_cap('upload_files');
+      $role->add_cap('unfiltered_html');
     }
 
     //Initialize all the above variables
@@ -133,6 +134,8 @@ if (!class_exists("uCanPost"))
               theme : "advanced",
               skin : "o2k7",
               editor_selector:"theEditor",
+              remove_script_host : false,
+              convert_urls : false,
               width:"80%",
               theme_advanced_buttons1 : "bold,italic,underline,|,justifyleft,justifycenter,justifyright,fontsizeselect,formatselect",
               theme_advanced_buttons2 : "cut,copy,paste,|,bullist,numlist,|,outdent,indent,|,undo,redo,|,link,unlink,image,media",
